@@ -1,23 +1,29 @@
 package Array;
-
+import java.util.Arrays;
 import java.util.Scanner;
-
-public class ejercicio2 {
+public class Ejercicio3 {
     public static void main(String[] args) {
         int condition = 0;
         Scanner input = new Scanner(System.in);
-        int[] array = { 5, 2, 9, 1, 6, 3, 4, 7, 8, 0 };
+        int[] array = { 5, 2, 9, 1, 6, 3};
         do {
             System.out.println("1.Ordenar array \n2.Comprobar si esta en array\n3.Rellenar Array\n4.Copiar array\n5.Comparar array");
             condition = input.nextInt();
             switch (condition) {
                 case 1:
-                    ordenarArray(array);
+                    Arrays.sort(array);
+                    System.out.println(Arrays.toString(array));
                     break;
                 case 2:
                     System.out.println("Ingresa num para array");
                     int num = input.nextInt();
-                    System.out.println(buscarNumero(array, num));
+                    Arrays.sort(array);
+                    int result = Arrays.binarySearch(array, 2); 
+                    if (result >= 0) { 
+                        System.out.println("Número encontrado en el índice: " + result);
+                    } else { 
+                        System.out.println("Número no encontrado."); 
+                    }
                     break;
                 case 3:
                     System.out.println("Ingresa num para array");

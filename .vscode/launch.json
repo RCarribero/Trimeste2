@@ -6,23 +6,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "ejercicio2",
+            "name": "DebugEjercicio2",
             "request": "launch",
-            "mainClass": "Array.ejercicio2",
-            "projectName": "Programacion_70ca2f5d"
-        },
-        {
-            "type": "java",
-            "name": "edDebugEjercicio1",
-            "request": "launch",
-            "mainClass": "Array.edDebugEjercicio1",
-            "projectName": "Programacion_70ca2f5d"
-        },
-        {
-            "type": "java",
-            "name": "Ejercicio1",
-            "request": "launch",
-            "mainClass": "Array.Ejercicio1",
+            "mainClass": "Array.DebugEjercicio2",
             "projectName": "Programacion_70ca2f5d"
         }
     ]

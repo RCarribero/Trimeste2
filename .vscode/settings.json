@@ -1,7 +1,7 @@
 {
     "java.project.sourcePaths": [
-        "Tema5/src/Ej1",
-        "Tema5/src"
+        "Tema5/src",
+        "Examen"
     ],
     "java.project.referencedLibraries": [],
     "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable",
