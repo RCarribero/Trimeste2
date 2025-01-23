@@ -1,5 +1,5 @@
 package Array;
-
+import Array.Ejercicio6;
 import java.util.Random;
 
 public class Ejercicio8 {
@@ -19,27 +19,30 @@ public class Ejercicio8 {
     public static void mostrarMatriz(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                System.out.print(matriz[i][j] + " ");
+                System.out.print(matriz[i][j] + "|");
             }
             System.out.println();
         }
     }
+
     public static int[][] rellenarArray(int[][] matriz) {
-    for(int i=0;i<matriz.length;i++){
-        for(int j=0;j<matriz[i].length;j++){
-            Random random = new Random();
-            matriz[i][j]=random.nextInt(10);
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                Random random = new Random();
+                matriz[i][j] = random.nextInt(5)+1;
+            }
         }
+        return matriz;
     }
-    return matriz;
-    }
-    public static int[][] multiplicarMatriz(int[][]matrizA, int[][]matrizB) {
+
+    public static int[][] multiplicarMatriz(int[][] matrizA, int[][] matrizB) {
         int[][] matrizResultado = new int[matrizA.length][matrizB[0].length];
-        for (int i = 0; i < matrizA.length; i++) {
-            for (int j = 0; j < matrizB[0].length; j++) {
-                matrizResultado[i][j] = 0;
-                for (int k = 0; k < matrizA[0].length; k++) {
-                    matrizResultado[i][j] += matrizA[i][k] * matrizB[k][j];
+        if (matrizA[0].length == matrizB.length) {
+            for (int i = 0; i < matrizA.length; i++) {
+                for (int j = 0; j < matrizA.length; j++) {
+                    for (int k = 0; k < matrizB.length; k++) {
+                        matrizResultado[i][j] += matrizA[i][k] * matrizB[k][j];
+                    }
                 }
             }
         }
