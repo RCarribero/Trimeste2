@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SalarioEmpleado",
+            "request": "launch",
+            "mainClass": "ED.SalarioEmpleado",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio11",
             "request": "launch",
             "mainClass": "Array.Ejercicio11",
