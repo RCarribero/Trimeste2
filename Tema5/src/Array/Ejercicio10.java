@@ -25,7 +25,10 @@ public class Ejercicio10 {
         boolean comprobacion=true;
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
-                if (matriz[i][j]!=(matriz[j][i]*(-1))&&i!=j) {
+                if (i==j) {
+                    matriz[i][j]=0;
+                }
+                if (matriz[i][j]!=matriz[j][i]*(-1)) {
                     comprobacion=false;
                 }
             }
