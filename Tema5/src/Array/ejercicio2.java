@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class ejercicio2 {
     public static void main(String[] args) {
         int condition = 0;
-        String hola="",adios="";
-        hola=adios.charAt(1);
         Scanner input = new Scanner(System.in);
         int[] array = { 5, 2, 9, 1, 6, 3, 4, 7, 8, 0 };
         do {
