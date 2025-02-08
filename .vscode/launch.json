@@ -1,0 +1,134 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Ejercicio2",
+            "request": "launch",
+            "mainClass": "src.Tema6.Ejercicio2.Ejercicio2",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio1",
+            "request": "launch",
+            "mainClass": "Tema6.src.Ejercicio1.Ejercicio1",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio1",
+            "request": "launch",
+            "mainClass": "Ejercicio1",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio3",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio3",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.example.App",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "SalarioEmpleado",
+            "request": "launch",
+            "mainClass": "ED.SalarioEmpleado",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio11",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio11",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio10",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio10",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio9",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio9",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio8",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio8",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio7",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio7",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio6",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio6",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio5",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio5",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio4",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio4",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio3",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio3",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio1",
+            "request": "launch",
+            "mainClass": "Array.Ejercicio1",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "EDEjercicio3",
+            "request": "launch",
+            "mainClass": "Array.EDEjercicio3",
+            "projectName": "Programacion_70ca2f5d"
+        },
+        {
+            "type": "java",
+            "name": "DebugEjercicio2",
+            "request": "launch",
+            "mainClass": "Array.DebugEjercicio2",
+            "projectName": "Programacion_70ca2f5d"
+        }
+    ]
+}
