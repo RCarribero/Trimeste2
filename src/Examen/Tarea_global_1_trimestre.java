@@ -1,3 +1,5 @@
+package src.Examen;
+
 import java.util.Scanner;
 
 public class Tarea_global_1_trimestre {

@@ -1,5 +1,4 @@
 package src.Tema5.Array;
-import Array.Ejercicio6;
 import java.util.Random;
 
 public class Ejercicio8 {

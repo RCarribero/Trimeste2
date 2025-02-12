@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Banco",
+            "request": "launch",
+            "mainClass": "src.Tema6.Gestor.Banco",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio2",
             "request": "launch",
             "mainClass": "src.Tema6.Ejercicio2.Ejercicio2",
