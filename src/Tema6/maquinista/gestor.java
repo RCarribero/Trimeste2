@@ -12,21 +12,21 @@ public class gestor {
         int opcionMenu = 0;
         String dni;
         Scanner input = new Scanner(System.in);
-        List<maquinista> maquinistas = new ArrayList<>();
-        List<mecanicos> mecanicos = new ArrayList<>();
-        List<jefeEstacion> jefeEstacion = new ArrayList<>();
-        List<locomotoras> locomotoras = new ArrayList<>();
-        List<trenes> tren = new ArrayList<>();
-        List<vagon> vagones = new ArrayList<>();
-        vagones.add(new vagon(458, 6000, 5000, "Granos"));
-        vagones.add(new vagon(459, 6000, 5000, "Pasajeros"));
-        vagones.add(new vagon(460, 9000, 8000, "Liquidos"));
-        vagones.add(new vagon(461, 5005, 5000, "Materiales pesados"));
-        maquinistas.add(new maquinista("Juan", "12345678A", 3000.0, "titular"));
-        mecanicos.add(new mecanicos("Pedro", "987654321", "frenos"));
-        jefeEstacion.add(new jefeEstacion("Luis", "87654321B", LocalDate.of(2020, 1, 1)));
-        locomotoras.add(new locomotoras("AA1234", 2000, 2010, mecanicos.get(0)));
-        tren.add(new trenes("TR-0001", locomotoras.get(0), maquinistas.get(0), vagones));
+        List<maquinista> maquinistaList = new ArrayList<>();
+        List<mecanicos> mecanicoList = new ArrayList<>();
+        List<jefeEstacion> jefeList = new ArrayList<>();
+        List<locomotoras> locomotoraList = new ArrayList<>();
+        List<trenes> trainList = new ArrayList<>();
+        List<vagon> vagonList = new ArrayList<>();
+        vagonList.add(new vagon(458, 6000, 5000, "Granos"));
+        vagonList.add(new vagon(459, 6000, 5000, "Pasajeros"));
+        vagonList.add(new vagon(460, 9000, 8000, "Liquidos"));
+        vagonList.add(new vagon(461, 5005, 5000, "Materiales pesados"));
+        maquinistaList.add(new maquinista("Juan", "12345678A", 3000.0, "titular"));
+        mecanicoList.add(new mecanicos("Pedro", "987654321", "frenos"));
+        jefeList.add(new jefeEstacion("Luis", "87654321B", LocalDate.of(2020, 1, 1)));
+        locomotoraList.add(new locomotoras("AA1234", 2000, 2010, mecanicoList.get(0)));
+        trainList.add(new trenes("TR-0001", locomotoraList.get(0), maquinistaList.get(0), vagonList));
         do {
             System.out.println(
                     "----------Elije una opcion del menu:----------\n1.Crear empleados\n2.Crear locomotora\n3.Crear trenes\n4.Visualizar informacion de un tren\n5.Modificar la carga de un vagon\n6.Listar los trenes\n7.Salir del programa");
@@ -54,9 +54,9 @@ public class gestor {
                                 clear();
                                 System.out.print("Introduce rango (ayudante/titular/supervisor):");
                                 String rango = input.nextLine();
-                                maquinistas.add(new maquinista(nombreEmpleado, dni, sueldo, rango));
+                                maquinistaList.add(new maquinista(nombreEmpleado, dni, sueldo, rango));
                                 System.out.println();
-                                for (maquinista maquinista1 : maquinistas) {
+                                for (maquinista maquinista1 : maquinistaList) {
                                     System.out.println(maquinista1.toString());
                                 }
                                 Enter(input);
@@ -67,10 +67,10 @@ public class gestor {
                                 clear();
                                 System.out.print("Introduce especialidad (frenos/hidraulica/electricidad/motor):");
                                 String especialidad = input.nextLine();
-                                mecanicos.add(new mecanicos(nombreEmpleado, telefono, especialidad));
+                                mecanicoList.add(new mecanicos(nombreEmpleado, telefono, especialidad));
                                 System.out.println();
-                                for (mecanicos mecanicos1 : mecanicos) {
-                                    System.out.println(mecanicos1.toString());
+                                for (mecanicos mecanico : mecanicoList) {
+                                    System.out.println(mecanico.toString());
                                 }
                                 Enter(input);
                                 break;
@@ -80,10 +80,10 @@ public class gestor {
                                 clear();
                                 System.out.print("Introduce fecha de nombramiento (YYYY-MM-DD):");
                                 String fechaNombramiento = input.nextLine();
-                                jefeEstacion
+                                jefeList
                                         .add(new jefeEstacion(nombreEmpleado, dni, LocalDate.parse(fechaNombramiento)));
                                 System.out.println();
-                                for (jefeEstacion jefe : jefeEstacion) {
+                                for (jefeEstacion jefe : jefeList) {
                                     System.out.println(jefe.toString());
                                 }
                                 Enter(input);
@@ -99,7 +99,7 @@ public class gestor {
                 case 2:
                     try {
                         int i = 0;
-                        for (mecanicos mecanico : mecanicos) {
+                        for (mecanicos mecanico : mecanicoList) {
                             System.out.println("id  " + i + " :");
                             i++;
                             System.out.println(mecanico.toString());
@@ -120,9 +120,9 @@ public class gestor {
                         int añoFabricacion = input.nextInt();
                         input.nextLine();
                         clear();
-                        locomotoras.add(new locomotoras(matricula, potencia, añoFabricacion, mecanicos.get(mecanico)));
-                        for (locomotoras locomotoras2 : locomotoras) {
-                            System.out.println(locomotoras2.toString());
+                        locomotoraList.add(new locomotoras(matricula, potencia, añoFabricacion, mecanicoList.get(mecanico)));
+                        for (locomotoras locomotoras : locomotoraList) {
+                            System.out.println(locomotoras.toString());
                         }
                         Enter(input);
                     } catch (Exception e) {
@@ -133,16 +133,16 @@ public class gestor {
                     try {
                         int contador = 0;
                         int contador2 = 0;
-                        for (locomotoras locomotoras2 : locomotoras) {
+                        for (locomotoras locomotora : locomotoraList) {
                             System.out.print("id " + contador + " :");
                             contador++;
-                            System.out.println(locomotoras2.toString());
+                            System.out.println(locomotora.toString());
                         }
                         System.out.println("Selecciona una locomotora: ");
                         int locomotora = input.nextInt();
                         input.nextLine();
                         clear();
-                        for (maquinista maquinista : maquinistas) {
+                        for (maquinista maquinista : maquinistaList) {
                             System.out.print("id " + contador2 + " :");
                             contador2++;
                             System.out.println(maquinista.toString());
@@ -153,41 +153,41 @@ public class gestor {
                         clear();
                         System.out.println("Indica el identificador del tren (TR-0000)");
                         String identificador = input.nextLine();
-                        tren.add(new trenes(identificador, locomotoras.get(locomotora), maquinistas.get(maquinista),
-                                vagones));
-                        System.out.println(tren.get(tren.size() - 1).toString());
+                        trainList.add(new trenes(identificador, locomotoraList.get(locomotora), maquinistaList.get(maquinista),
+                                vagonList));
+                        System.out.println(trainList.get(trainList.size() - 1).toString());
                         Enter(input);
                     } catch (Exception e) {
                         System.err.println(e);
                     }
                     break;
                 case 4:
-                    for (trenes trene : tren) {
-                        System.out.println(trene.getIdentificador());
+                    for (trenes tren : trainList) {
+                        System.out.println(tren.getIdentificador());
                     }
                     System.out.println("Selecciona un id para visualizar su informacion");
                     String idTren = input.nextLine();
                     clear();
-                    for (trenes trene : tren) {
-                        if (idTren.equals(trene.getIdentificador())) {
-                            System.out.println(trene.toString());
+                    for (trenes tren : trainList) {
+                        if (idTren.equals(tren.getIdentificador())) {
+                            System.out.println(tren.toString());
                         }
                     }
                     Enter(input);
                     break;
                 case 5:
                     try {
-                        for (trenes trene : tren) {
-                            System.out.println(trene.getIdentificador());
+                        for (trenes tren : trainList) {
+                            System.out.println(tren.getIdentificador());
                         }
                         System.out.println("Selecciona un id para visualizar su informacion");
                         idTren = input.nextLine();
                         clear();
-                        for (trenes trene : tren) {
-                            if (idTren.equals(trene.getIdentificador())) {
-                                System.out.println(trene.getVagones().toString());
+                        for (trenes tren : trainList) {
+                            if (idTren.equals(tren.getIdentificador())) {
+                                System.out.println(tren.getVagones().toString());
                                 int numIdentificacion = input.nextInt();
-                                for (vagon vagon : trene.getVagones()) {
+                                for (vagon vagon : tren.getVagones()) {
                                     if (vagon.getNumeroIdentificacion() == numIdentificacion) {
                                         System.out.println("Introduce una carga nueva para el vagon");
                                         int nuevaCarga = input.nextInt();
@@ -202,8 +202,8 @@ public class gestor {
                     }
                     break;
                 case 6:
-                    for (trenes trene : tren) {
-                        System.out.println(trene.toString());
+                    for (trenes tren : trainList) {
+                        System.out.println(tren.toString());
                     }
                     Enter(input);
                     break;
