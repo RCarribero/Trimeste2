@@ -2,10 +2,10 @@ package src.Tema6.Gestor;
 import java.util.Scanner;
 
 public class Banco {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+    public static void main(final String[] args) {
+        final Scanner input = new Scanner(System.in);
         gestor administrador = null;
-        cuenta cuentaCliente = new cuenta(0, 0);
+        final cuenta cuentaCliente = new cuenta(0, 0);
         int opcion = 0;
         int telefono = 0;
         String nombre = "";
@@ -19,10 +19,10 @@ public class Banco {
                     System.out.println("Ingrese el número de contacto:");
                     telefono = input.nextInt();
                     System.out.println("¿Desea establecer un límite de transacción?");
-                    String respuesta = input.next();
+                    final String respuesta = input.next();
                     if (respuesta.equalsIgnoreCase("si")) {
                         System.out.println("Ingrese el límite máximo:");
-                        double limite = input.nextInt();
+                        final double limite = input.nextInt();
                         administrador = new gestor(nombre, telefono, limite);
                     } else {
                         administrador = new gestor(nombre, telefono);
@@ -30,9 +30,9 @@ public class Banco {
                     break;
                 case 2:
                     System.out.println("Ingrese el número de cuenta:");
-                    int numeroCuenta = input.nextInt();
+                    final int numeroCuenta = input.nextInt();
                     System.out.println("Ingrese el saldo inicial:");
-                    int saldo = input.nextInt();
+                    final int saldo = input.nextInt();
                     cuentaCliente.setNumeroCuenta(numeroCuenta);
                     cuentaCliente.setSaldo(saldo);
                     System.out.println("Número de cuenta asignado: " + cuentaCliente.getNumeroCuenta());
@@ -43,12 +43,12 @@ public class Banco {
                     break;
                 case 4:
                     System.out.println("¿Desea realizar una transacción?");
-                    String confirmacion = input.next();
+                    final String confirmacion = input.next();
                     if (confirmacion.equalsIgnoreCase("si")) {
                         System.out.println("¿Desea depositar o retirar fondos?");
-                        String tipoTransaccion = input.next();
+                        final String tipoTransaccion = input.next();
                         System.out.println("Ingrese el monto de la transacción:");
-                        int monto = input.nextInt();
+                        final int monto = input.nextInt();
                         cuentaCliente.realizarOperacion(monto, tipoTransaccion);
                     } else {
                         System.out.println("Saldo actual: " + cuentaCliente.getSaldo());
