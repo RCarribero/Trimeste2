@@ -18,10 +18,12 @@ public class gestor {
         List<locomotoras> locomotoraList = new ArrayList<>();
         List<trenes> trainList = new ArrayList<>();
         List<vagon> vagonList = new ArrayList<>();
+        List<vagon> vagonListSuplementario = new ArrayList<>();
         vagonList.add(new vagon(458, 6000, 5000, "Granos"));
         vagonList.add(new vagon(459, 6000, 5000, "Pasajeros"));
         vagonList.add(new vagon(460, 9000, 8000, "Liquidos"));
         vagonList.add(new vagon(461, 5005, 5000, "Materiales pesados"));
+        vagonList.add(new vagon(462, 7000, 6000, "Liquidos"));
         maquinistaList.add(new maquinista("Juan", "12345678A", 3000.0, "titular"));
         mecanicoList.add(new mecanicos("Pedro", "987654321", "frenos"));
         jefeList.add(new jefeEstacion("Luis", "87654321B", LocalDate.of(2020, 1, 1)));
@@ -80,8 +82,7 @@ public class gestor {
                                 clear();
                                 System.out.print("Introduce fecha de nombramiento (YYYY-MM-DD):");
                                 String fechaNombramiento = input.nextLine();
-                                jefeList
-                                        .add(new jefeEstacion(nombreEmpleado, dni, LocalDate.parse(fechaNombramiento)));
+                                jefeList.add(new jefeEstacion(nombreEmpleado, dni, LocalDate.parse(fechaNombramiento)));
                                 System.out.println();
                                 for (jefeEstacion jefe : jefeList) {
                                     System.out.println(jefe.toString());
@@ -153,9 +154,18 @@ public class gestor {
                         clear();
                         System.out.println("Indica el identificador del tren (TR-0000)");
                         String identificador = input.nextLine();
-                        trainList.add(new trenes(identificador, locomotoraList.get(locomotora), maquinistaList.get(maquinista),
-                                vagonList));
-                        System.out.println(trainList.get(trainList.size() - 1).toString());
+                        System.out.println("Cuantos vagones quieres acoplar? 1-5");
+                        int nVagones=input.nextInt();
+                        if (nVagones>0&&nVagones<6) {
+                            for (int i = 0; i < nVagones-1; i++) {
+                                vagonListSuplementario.add(vagonList.get(i));
+                            }
+                            trainList.add(new trenes(identificador, locomotoraList.get(locomotora), maquinistaList.get(maquinista),
+                                    vagonList));
+                                    System.out.println(trainList.get(trainList.size() - 1).toString());
+                        }else{
+                            System.out.println("La cantidad minima de vagones es 1 y la maxima 5");
+                        }
                         Enter(input);
                     } catch (Exception e) {
                         System.err.println(e);
@@ -186,6 +196,7 @@ public class gestor {
                         for (trenes tren : trainList) {
                             if (idTren.equals(tren.getIdentificador())) {
                                 System.out.println(tren.getVagones().toString());
+                                System.out.println("Seleccione un vagon para modificar su carga");
                                 int numIdentificacion = input.nextInt();
                                 for (vagon vagon : tren.getVagones()) {
                                     if (vagon.getNumeroIdentificacion() == numIdentificacion) {

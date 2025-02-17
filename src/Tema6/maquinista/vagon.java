@@ -8,7 +8,6 @@ class vagon {
     private int numeroIdentificacion;
     private double cargaMaxima;
     private double cargaActual;
-    private static int maxVagones=5;
 
     private String tipoMercancia;
     vagon(int numeroIdentificacion, double cargaMaxima, double cargaActual, String tipoMercancia) {
@@ -22,7 +21,7 @@ class vagon {
 
     @Override
     public String toString() {
-        return "vagon" + numeroIdentificacion + ", cargaMaxima=" + cargaMaxima + ", cargaActual="
+        return "vagon " + numeroIdentificacion + ", cargaMaxima=" + cargaMaxima + ", cargaActual="
                 + cargaActual + ", tipoMercancia=" + tipoMercancia + "\n";
     }
 
