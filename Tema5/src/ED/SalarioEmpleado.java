@@ -20,7 +20,7 @@ public class SalarioEmpleado {
         double tasaHoraExtra = scanner.nextDouble();
 
         double pagoHorasExtras = horasExtras * tasaHoraExtra;
-        double salarioBruto = salarioBase + pagoHorasExtras;
+w        double salarioBruto = salarioBase + pagoHorasExtras;
 
         double irpf;
         if (salarioBruto > 2000) {

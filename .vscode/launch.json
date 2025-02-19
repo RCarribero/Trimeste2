@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.example.App",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "SalarioEmpleado",
             "request": "launch",
             "mainClass": "ED.SalarioEmpleado",
