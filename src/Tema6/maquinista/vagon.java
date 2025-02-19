@@ -25,9 +25,7 @@ class vagon {
                 + cargaActual + ", tipoMercancia=" + tipoMercancia + "\n";
     }
 
-
-
-    int getNumeroIdentificacion() {
+    public int getNumeroIdentificacion() {
         return numeroIdentificacion;
     }
 

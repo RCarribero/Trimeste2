@@ -1,15 +1,13 @@
 package src.Tema6.maquinista;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 public class gestor {
     public static void main(String[] args) {
         clear();
-        int opcionMenu = 0;
+        int opcionMenu;
         String dni;
         Scanner input = new Scanner(System.in);
         List<maquinista> maquinistaList = new ArrayList<>();
@@ -30,8 +28,7 @@ public class gestor {
         locomotoraList.add(new locomotoras("AA1234", 2000, 2010, mecanicoList.get(0)));
         trainList.add(new trenes("TR-0001", locomotoraList.get(0), maquinistaList.get(0), vagonList));
         do {
-            System.out.println(
-                    "----------Elije una opcion del menu:----------\n1.Crear empleados\n2.Crear locomotora\n3.Crear trenes\n4.Visualizar informacion de un tren\n5.Modificar la carga de un vagon\n6.Listar los trenes\n7.Salir del programa");
+            System.out.println("----------Elije una opcion del menu:----------\n1.Crear empleados\n2.Crear locomotora\n3.Crear trenes\n4.Visualizar informacion de un tren\n5.Modificar la carga de un vagon\n6.Listar los trenes\n7.Salir del programa");
             opcionMenu = input.nextInt();
             input.nextLine();
             clear();
@@ -45,13 +42,14 @@ public class gestor {
                         System.out.print("Introduce el nombre:");
                         String nombreEmpleado = input.nextLine();
                         clear();
+
                         switch (tipoEmpleado.toLowerCase()) {
                             case "maquinista":
                                 System.out.print("Introduce dni (00000000A):");
                                 dni = input.nextLine();
                                 clear();
                                 System.out.print("Introduce sueldo (1200-5000):");
-                                Double sueldo = input.nextDouble();
+                                double sueldo = input.nextDouble();
                                 input.nextLine();
                                 clear();
                                 System.out.print("Introduce rango (ayudante/titular/supervisor):");
@@ -162,7 +160,7 @@ public class gestor {
                             }
                             trainList.add(new trenes(identificador, locomotoraList.get(locomotora), maquinistaList.get(maquinista),
                                     vagonList));
-                                    System.out.println(trainList.get(trainList.size() - 1).toString());
+                                    System.out.println(trainList.getLast().toString());
                         }else{
                             System.out.println("La cantidad minima de vagones es 1 y la maxima 5");
                         }
@@ -180,7 +178,7 @@ public class gestor {
                     clear();
                     for (trenes tren : trainList) {
                         if (idTren.equals(tren.getIdentificador())) {
-                            System.out.println(tren.toString());
+                            System.out.println(tren);
                         }
                     }
                     Enter(input);
