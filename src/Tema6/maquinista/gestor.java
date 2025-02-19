@@ -227,9 +227,18 @@ public class gestor {
 
     public static void clear() {
         try {
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+            String os = System.getProperty("os.name").toLowerCase();
+            ProcessBuilder processBuilder;
+
+            if (os.contains("win")) {
+                processBuilder = new ProcessBuilder("cmd", "/c", "cls");
+            } else {
+                processBuilder = new ProcessBuilder("clear");
+            }
+
+            processBuilder.inheritIO().start().waitFor();
+        } catch (Exception e) {
+            System.out.println("Error al limpiar la consola: " + e.getMessage());
         }
     }
 
