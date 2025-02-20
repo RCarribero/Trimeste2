@@ -1,19 +1,19 @@
 package src.Tema6.maquinista;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 class trenes {
     private static ArrayList<String> unico = new ArrayList<>();
-    private List<vagon> vagones;
+    private Set<vagon> vagones;
     private String identificador;
     private locomotoras locomotora;
     private maquinista maquinista;
-    trenes(String identificador, locomotoras locomotora, maquinista maquinista, List<vagon> vagones) {
+    trenes(String identificador, locomotoras locomotora, maquinista maquinista, Set<vagon> vagonListSuplementario) {
         setIdentificador(identificador);
         setLocomotora(locomotora);
         setMaquinista(maquinista);
-        setVagones(vagones);
+        setVagones(vagonListSuplementario);
     }
 
     @Override
@@ -56,11 +56,11 @@ class trenes {
         this.maquinista = maquinista;
     }
 
-    public List<vagon> getVagones() {
+    public Set<vagon> getVagones() {
         return vagones;
     }
 
-    public void setVagones(List<vagon> vagones) {
+    public void setVagones(Set<vagon> vagones) {
         this.vagones = vagones;
     }
 }

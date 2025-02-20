@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "central",
+            "request": "launch",
+            "mainClass": "src.Tema6.empresaFerroviaria.central",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
             "name": "gestor",
             "request": "launch",
             "mainClass": "src.Tema6.maquinista.gestor",
