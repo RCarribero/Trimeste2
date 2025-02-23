@@ -4,29 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class autobus {
-    static List<String> matriculaUnica = new ArrayList<>();
-    String matricula;
-    int capacidadMaxima;
-    conductor conductor;
-    ruta ruta;
-    boolean autobusAsignado = false;
+    private static List<String> matriculaUnica = new ArrayList<>();
+    private String matricula;
+    private int capacidadMaxima;
+    private conductor conductor;
+    private ruta ruta;
+    private boolean autobusAsignado = false;
 
-    public autobus() {
+    autobus() {
     }
 
-    public boolean isAutobusAsignado() {
-        return autobusAsignado;
-    }
-
-    public void setAutobusAsignado(boolean autobusAsignado) {
+    autobus(String matricula, int capacidadMaxima, conductor conductor, ruta ruta, boolean autobusAsignado) {
+        this.matricula = matricula;
+        this.capacidadMaxima = capacidadMaxima;
+        this.conductor = conductor;
+        this.ruta = ruta;
         this.autobusAsignado = autobusAsignado;
     }
 
-    public String getMatricula() {
+    boolean isAutobusAsignado() {
+        return autobusAsignado;
+    }
+
+    void setAutobusAsignado(boolean autobusAsignado) {
+        this.autobusAsignado = autobusAsignado;
+    }
+
+    String getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(String matricula) {
+    void setMatricula(String matricula) {
         boolean verificacion = true;
         for (String id : matriculaUnica) {
             if (id.equals(matricula)) {
@@ -41,11 +49,11 @@ public class autobus {
         }
     }
 
-    public int getCapacidadMaxima() {
+    int getCapacidadMaxima() {
         return capacidadMaxima;
     }
 
-    public void setCapacidadMaxima(int capacidadMaxima) {
+    void setCapacidadMaxima(int capacidadMaxima) {
         if (capacidadMaxima > 20 && capacidadMaxima < 80) {
             this.capacidadMaxima = capacidadMaxima;
         } else {
@@ -53,28 +61,28 @@ public class autobus {
         }
     }
 
-    public conductor getConductor() {
+    conductor getConductor() {
         return conductor;
     }
 
-    public void setConductor(conductor conductor) {
+    void setConductor(conductor conductor) {
         if (!conductor.isAsignado()) {
             this.conductor = conductor;
-            this.conductor.asignado = true;
+            this.conductor.setAsignado(true);
         } else {
             throw new IllegalArgumentException("Este conductor ya esta ocupado");
         }
     }
 
-    public ruta getRuta() {
+    ruta getRuta() {
         return ruta;
     }
 
-    public void setRuta(ruta ruta) {
+    void setRuta(ruta ruta) {
         if (!ruta.isRutaAsignada()) {
             this.ruta = ruta;
-            this.ruta.rutaAsignada = true;
-        }else{
+            this.ruta.setRutaAsignada(true);
+        } else {
             throw new IllegalArgumentException("Codigo de ruta invalido");
         }
     }
@@ -84,21 +92,23 @@ public class autobus {
         return "autobus [matricula=" + matricula + ", capacidadMaxima=" + capacidadMaxima + ", conductor=" + conductor
                 + ", ruta=" + ruta + "]";
     }
-    void modificarRuta(ruta ruta){
+
+    void modificarRuta(ruta ruta) {
         if (!ruta.isRutaAsignada()) {
-            this.ruta.rutaAsignada=false;
-            this.ruta=ruta;
-            this.ruta.rutaAsignada=true;
-        }else{
+            this.ruta.setRutaAsignada(false);
+            this.ruta = ruta;
+            this.ruta.setRutaAsignada(true);
+        } else {
             throw new IllegalArgumentException("Esta ruta ya esta asignada");
         }
     }
-    void modificarConductor(conductor conductor){
-        if (!conductor.asignado) {
-            this.conductor.asignado=false;
-            this.conductor=conductor;
-            this.conductor.asignado=true;
-        }else{
+
+    void modificarConductor(conductor conductor) {
+        if (!conductor.isAsignado()) {
+            this.conductor.setAsignado(false);
+            this.conductor = conductor;
+            this.conductor.setAsignado(true);
+        } else {
             throw new IllegalArgumentException("Este conductoe ya esta asignado");
         }
     }

@@ -7,13 +7,28 @@ import java.util.Scanner;
 public class central {
     public static void main(String[] args) {
         boolean verificacion = true;
-        String nombre = "", dni = "", telefono = "", matricula = "", codigoRuta = "",codigoConductor="";
+        String nombre = "", dni = "", telefono = "", matricula = "", codigoRuta = "", codigoConductor = "";
         int años = 0, opcion = 0, capacidadMaxima = 0, parada = 0;
         double kilometros = 0.00;
         List<conductor> conductorList = new ArrayList<>();
         List<autobus> autobusList = new ArrayList<>();
         List<ruta> rutalist = new ArrayList<>();
         Scanner input = new Scanner(System.in);
+        conductorList.add(new conductor("Juan Perez", "12345678A", 5, "123456789", verificacion));
+        conductorList.add(new conductor("Maria Lopez", "87654321B", 3, "987654321", verificacion));
+        conductorList.add(new conductor("Carlos Sanchez", "11223344C", 2, "112233445", false));
+        conductorList.add(new conductor("Ana Martinez", "44332211D", 4, "554433221", false));
+
+        rutalist.add(new ruta("R001", 5, 10.5, verificacion));
+        rutalist.add(new ruta("R002", 3, 7.2, verificacion));
+        rutalist.add(new ruta("R003", 4, 8.0, false));
+        rutalist.add(new ruta("R004", 6, 12.3, false));
+
+        autobusList.add(new autobus("ABC123", 50, conductorList.get(0), rutalist.get(0), verificacion));
+        autobusList.add(new autobus("XYZ789", 40, conductorList.get(1), rutalist.get(1), verificacion));
+        autobusList.add(new autobus("LMN456", 45, null, null, false));
+        autobusList.add(new autobus("DEF321", 55, null, null, false));
+
         do {
             clear();
             try {
@@ -74,6 +89,7 @@ public class central {
                                 input.nextLine();
                                 conductorList.getLast().setAñoExperiencia(años);
                             } catch (Exception e) {
+                                input.nextLine();
                                 System.out.println(e);
                                 verificacion = false;
                             }
@@ -132,6 +148,7 @@ public class central {
                                 rutalist.getLast().setKilometros(kilometros);
                                 ;
                             } catch (Exception e) {
+                                input.nextLine();
                                 System.out.println(e);
                                 verificacion = false;
                             }
@@ -163,6 +180,7 @@ public class central {
                                 input.nextLine();
                                 autobusList.getLast().setCapacidadMaxima(capacidadMaxima);
                             } catch (Exception e) {
+                                input.nextLine();
                                 System.out.println(e);
                                 verificacion = false;
                             }
@@ -212,7 +230,7 @@ public class central {
                         } while (!verificacion);
                         break;
                     case 4:
-                    clear();
+                        clear();
                         for (autobus autobus : autobusList) {
                             System.out.println(autobus.getMatricula());
                             System.out.println();
@@ -227,7 +245,7 @@ public class central {
                         enter(input);
                         break;
                     case 5:
-                    clear();
+                        clear();
                         for (autobus autobus : autobusList) {
                             System.out.println(autobus.toString());
                         }
@@ -248,10 +266,12 @@ public class central {
                                     System.out.println(autobus.getRuta());
                                     System.out.println("Ingrese una nueva ruta\nRutas disponibles: ");
                                     for (ruta ruta : rutalist) {
-                                        System.out.println(ruta.toString());
+                                        if (!ruta.isRutaAsignada()) {
+                                            System.out.println(ruta.toString());
+                                        }
                                     }
                                     System.out.print("Ingrese el identificador: ");
-                                    codigoRuta=input.nextLine();
+                                    codigoRuta = input.nextLine();
                                     for (ruta ruta : rutalist) {
                                         if (ruta.getCodigoRuta().equalsIgnoreCase(codigoRuta)) {
                                             autobus.modificarRuta(ruta);
@@ -264,12 +284,12 @@ public class central {
                             System.out.println(e);
                         }
                         break;
-                        case 7:
+                    case 7:
                         try {
-                        clear();
-                        for (autobus autobus : autobusList) {
-                            System.out.println(autobus.getMatricula());
-                        }
+                            clear();
+                            for (autobus autobus : autobusList) {
+                                System.out.println(autobus.getMatricula());
+                            }
                             System.out.println("Selecciona el autobus que desea cambiar su conductor ");
                             nombre = input.nextLine();
                             clear();
@@ -278,14 +298,16 @@ public class central {
                                     System.out.println("conductor actual");
                                     System.out.println(autobus.getConductor());
                                     System.out.println("Ingrese un nueva conductor\nConductores disponibles: ");
-                                    for (conductor conductors : conductorList) {
-                                        System.out.println(conductors.toString());
+                                    for (conductor conductor : conductorList) {
+                                        if (!conductor.isAsignado()) {
+                                            System.out.println(conductor.toString());
+                                        }
                                     }
                                     System.out.print("Ingrese el nombre del conductor: ");
-                                    codigoConductor=input.nextLine();
-                                    for (conductor conductors : conductorList) {
-                                        if (conductors.getNombre().equalsIgnoreCase(codigoConductor)){
-                                            autobus.modificarConductor(conductors);
+                                    codigoConductor = input.nextLine();
+                                    for (conductor conductor : conductorList) {
+                                        if (conductor.getNombre().equalsIgnoreCase(codigoConductor)) {
+                                            autobus.modificarConductor(conductor);
                                         }
                                     }
                                 }
@@ -300,18 +322,18 @@ public class central {
                             System.out.println(conductor.toString());
                             if (conductor.isAsignado()) {
                                 System.out.println("El conductor esta asignado");
-                            }else{
+                            } else {
                                 System.out.println("El conductor esta libre");
                             }
                         }
                         enter(input);
                         break;
-                    case 9: 
+                    case 9:
                         for (ruta ruta : rutalist) {
                             System.out.println(ruta.toString());
                             if (ruta.isRutaAsignada()) {
                                 System.out.println("La ruta esta asignado");
-                            }else{
+                            } else {
                                 System.out.println("La ruta esta libre");
                             }
                         }

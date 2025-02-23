@@ -4,17 +4,17 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class conductor {
-    static List<String> dniUnico = new ArrayList<>();
-    String nombre;
-    String dni;
-    int añoExperiencia;
-    String telefono;
-    boolean asignado = false;
+    private static List<String> dniUnico = new ArrayList<>();
+    private String nombre;
+    private String dni;
+    private int añoExperiencia;
+    private String telefono;
+    private boolean asignado = false;
 
-    public conductor() {
+    conductor() {
     }
 
-    public conductor(String nombre, String dni, int añoExperiencia, String telefono, boolean asignado) {
+    conductor(String nombre, String dni, int añoExperiencia, String telefono,boolean asignado) {
         this.nombre = nombre;
         this.dni = dni;
         this.añoExperiencia = añoExperiencia;
@@ -22,11 +22,11 @@ public class conductor {
         this.asignado = asignado;
     }
 
-    public String getNombre() {
+    String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    void setNombre(String nombre) {
         if (nombre.matches("^[a-zA-Z]{3,50}$")) {
             this.nombre = nombre;
         } else {
@@ -34,11 +34,11 @@ public class conductor {
         }
     }
 
-    public String getDni() {
+    String getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    void setDni(String dni) {
         boolean verificacion = true;
         for (String id : dniUnico) {
             if (id.equals(dni)) {
@@ -53,11 +53,11 @@ public class conductor {
         }
     }
 
-    public int getAñoExperiencia() {
+    int getAñoExperiencia() {
         return añoExperiencia;
     }
 
-    public void setAñoExperiencia(int añoExperiencia) {
+    void setAñoExperiencia(int añoExperiencia) {
         if (añoExperiencia >= 1) {
             this.añoExperiencia = añoExperiencia;
         } else {
@@ -65,11 +65,11 @@ public class conductor {
         }
     }
 
-    public String getTelefono() {
+    String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    void setTelefono(String telefono) {
         if (telefono.matches("^\\d{9}$")) {
             this.telefono = telefono;
         } else {
@@ -77,11 +77,11 @@ public class conductor {
         }
     }
 
-    public boolean isAsignado() {
+    boolean isAsignado() {
         return asignado;
     }
 
-    public void setAsignado(boolean asignado) {
+    void setAsignado(boolean asignado) {
         this.asignado = asignado;
     }
 
@@ -90,5 +90,4 @@ public class conductor {
         return "conductor [nombre=" + nombre + ", dni=" + dni + ", añoExperiencia=" + añoExperiencia + ", telefono="
                 + telefono + "]";
     }
-
 }

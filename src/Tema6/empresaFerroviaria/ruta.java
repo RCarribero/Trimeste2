@@ -4,18 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ruta {
-    static List<String> codigoRutaUnico = new ArrayList<>();
-    String codigoRuta;
-    int paradas;
-    double kilometros;
-    boolean rutaAsignada = false;
+    private static List<String> codigoRutaUnico = new ArrayList<>();
+    private String codigoRuta;
+    private int paradas;
+    private double kilometros;
+    private boolean rutaAsignada = false;
+
+    ruta(String codigoRuta, int paradas, double kilometros, boolean rutaAsignada) {
+        this.codigoRuta = codigoRuta;
+        this.paradas = paradas;
+        this.kilometros = kilometros;
+        this.rutaAsignada = rutaAsignada;
+    }
+
+    ruta() {
+    }
 
     @Override
     public String toString() {
         return "ruta [codigoRuta=" + codigoRuta + ", paradas=" + paradas + ", kilometros=" + kilometros + "]";
     }
 
-    public void setCodigoRuta(String codigoRuta) {
+    void setCodigoRuta(String codigoRuta) {
         boolean verificacion = true;
         for (String id : codigoRutaUnico) {
             if (codigoRuta.equals(id)) {
@@ -30,27 +40,27 @@ public class ruta {
         }
     }
 
-    public void setRutaAsignada(boolean rutaAsignada) {
+    void setRutaAsignada(boolean rutaAsignada) {
         this.rutaAsignada = rutaAsignada;
     }
 
-    public String getCodigoRuta() {
+    String getCodigoRuta() {
         return codigoRuta;
     }
 
-    public int getParadas() {
+    int getParadas() {
         return paradas;
     }
 
-    public double getKilometros() {
+    double getKilometros() {
         return kilometros;
     }
 
-    public boolean isRutaAsignada() {
+    boolean isRutaAsignada() {
         return rutaAsignada;
     }
 
-    public void setParadas(int paradas) {
+    void setParadas(int paradas) {
         if (paradas > 1) {
             this.paradas = paradas;
         } else {
@@ -58,7 +68,7 @@ public class ruta {
         }
     }
 
-    public void setKilometros(double kilometros) {
+    void setKilometros(double kilometros) {
         if (kilometros > 0) {
             this.kilometros = kilometros;
         } else {
