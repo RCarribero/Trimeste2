@@ -94,7 +94,7 @@ public class autobus {
     }
 
     void modificarRuta(ruta ruta) {
-        if (!ruta.isRutaAsignada()) {
+        if (!ruta.isRutaAsignada()||ruta.isRutaAsignada()) {
             this.ruta.setRutaAsignada(false);
             this.ruta = ruta;
             this.ruta.setRutaAsignada(true);

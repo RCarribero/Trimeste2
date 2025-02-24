@@ -53,6 +53,13 @@ public class conductor {
         }
     }
 
+    public conductor(String nombre, String dni, int añoExperiencia, String telefono) {
+        setNombre(nombre);
+        setDni(dni);
+        setAñoExperiencia(añoExperiencia);
+        setTelefono(telefono);
+    }
+
     int getAñoExperiencia() {
         return añoExperiencia;
     }
