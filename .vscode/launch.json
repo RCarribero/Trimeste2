@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "cine",
+            "request": "launch",
+            "mainClass": "src.Tema6.cine.cine",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
             "name": "central",
             "request": "launch",
             "mainClass": "src.Tema6.empresaFerroviaria.central",

@@ -13,41 +13,43 @@ public class central {
     static List<autobus> autobusList = new ArrayList<>();
     static List<ruta> rutalist = new ArrayList<>();
     static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
-        inicializarDatos();
+        // inicializarDatos();
         do {
             clear();
             menu();
             try {
                 switch (opcion) {
                     case 1:
-                        case1();
+                        crearConductor();
                         break;
                     case 2:
-                        case2();
+                        crearRuta();
                         break;
                     case 3:
-                        case3();
+                        crearAutobus();
                         break;
                     case 4:
-                        case4();
+                        infoAutobus();
                         break;
                     case 5:
-                        case5();
+                        infoAutobusList();
                         break;
                     case 6:
-                        case6();
+                        modificarRuta();
                         break;
                     case 7:
-                        case7();
+                        modificarConductor();
                         break;
                     case 8:
-                        case8();
+                        infoConductores();
                         break;
                     case 9:
-                        case9();
+                        infoRutas();
                         break;
                     case 10:
+                        clear();
                         System.out.println("Gracias por usar nuestro programa");
                         break;
                     default:
@@ -85,6 +87,7 @@ public class central {
         input.nextLine();
         clear();
     }
+
     static void menu() {
         System.out.println(
                 "-----------------------------------------Elije-una-opcion----------------------------------------\n"
@@ -109,7 +112,7 @@ public class central {
         input.nextLine();
     }
 
-    static void case1() {
+    static void crearConductor() {
         clear();
         conductorList.add(new conductor());
         do {
@@ -171,7 +174,7 @@ public class central {
         enter(input);
     }
 
-    static void case2() {
+    static void crearRuta() {
         clear();
         rutalist.add(new ruta());
         do {
@@ -221,84 +224,92 @@ public class central {
         enter(input);
     }
 
-    static void case3() {
+    static void crearAutobus() {
         autobusList.add(new autobus());
         clear();
-        do {
-            try {
-                verificacion = true;
-                System.out.println("Ingresa matricula");
-                matricula = input.nextLine();
-                autobusList.getLast().setMatricula(matricula);
-            } catch (Exception e) {
-                clear();
-                System.out.println(e);
-                verificacion = false;
-            }
-        } while (!verificacion);
-        clear();
-        do {
-            try {
-                verificacion = true;
-                System.out.println("Ingresa capacidad maxima");
-                capacidadMaxima = input.nextInt();
-                input.nextLine();
-                autobusList.getLast().setCapacidadMaxima(capacidadMaxima);
-            } catch (Exception e) {
-                clear();
-                input.nextLine();
-                System.out.println(e);
-                verificacion = false;
-            }
-        } while (!verificacion);
-        clear();
-        do {
-            try {
-                verificacion = false;
-                for (conductor conductor : conductorList) {
-                    System.out.println(conductor);
+        if (conductorList.isEmpty()) {
+            System.out.println("No existen conductores");
+            enter(input);
+        } else if (rutalist.isEmpty()) {
+            System.out.println("No existen rutas");
+            enter(input);
+        } else {
+            do {
+                try {
+                    verificacion = true;
+                    System.out.println("Ingresa matricula");
+                    matricula = input.nextLine();
+                    autobusList.getLast().setMatricula(matricula);
+                } catch (Exception e) {
+                    clear();
+                    System.out.println(e);
+                    verificacion = false;
                 }
-                System.out.println("Ingrese el conductor del autobus");
-                nombre = input.nextLine();
-                for (conductor conductor : conductorList) {
-                    if (conductor.getNombre().equalsIgnoreCase(nombre)) {
-                        autobusList.getLast().setConductor(conductor);
-                        verificacion = true;
-                    }
-                }
-            } catch (Exception e) {
-                clear();
-                System.out.println(e);
-                verificacion = false;
-            }
-        } while (!verificacion);
-        clear();
-        do {
-            try {
-                verificacion = false;
-                for (ruta ruta : rutalist) {
-                    System.out.println(ruta);
-                }
-                System.out.println("Ingrese una ruta");
-                codigoRuta = input.nextLine();
-                for (ruta ruta : rutalist) {
-                    if (ruta.getCodigoRuta().equalsIgnoreCase(codigoRuta)) {
-                        autobusList.getLast().setRuta(ruta);
-                        verificacion = true;
-                    }
-                }
-            } catch (Exception e) {
-                clear();
-                System.out.println(e);
-                verificacion = false;
-            }
+            } while (!verificacion);
             clear();
-            System.out.println("Autobus creado con exito");
-            System.out.println(autobusList.getLast().toString());
-        } while (!verificacion);
+            do {
+                try {
+                    verificacion = true;
+                    System.out.println("Ingresa capacidad maxima");
+                    capacidadMaxima = input.nextInt();
+                    input.nextLine();
+                    autobusList.getLast().setCapacidadMaxima(capacidadMaxima);
+                } catch (Exception e) {
+                    clear();
+                    input.nextLine();
+                    System.out.println(e);
+                    verificacion = false;
+                }
+            } while (!verificacion);
+            clear();
+            do {
+                try {
+                    verificacion = false;
+                    for (conductor conductor : conductorList) {
+                        System.out.println(conductor);
+                    }
+                    System.out.println("Ingrese el conductor del autobus");
+                    nombre = input.nextLine();
+                    for (conductor conductor : conductorList) {
+                        if (conductor.getNombre().equalsIgnoreCase(nombre)) {
+                            autobusList.getLast().setConductor(conductor);
+                            verificacion = true;
+                        }
+                    }
+                } catch (Exception e) {
+                    clear();
+                    System.out.println(e);
+                    verificacion = false;
+                }
+            } while (!verificacion);
+            clear();
+            do {
+                try {
+                    verificacion = false;
+                    for (ruta ruta : rutalist) {
+                        System.out.println(ruta);
+                    }
+                    System.out.println("Ingrese una ruta");
+                    codigoRuta = input.nextLine();
+                    for (ruta ruta : rutalist) {
+                        if (ruta.getCodigoRuta().equalsIgnoreCase(codigoRuta)) {
+                            autobusList.getLast().setRuta(ruta);
+                            verificacion = true;
+                        }
+                    }
+                } catch (Exception e) {
+                    clear();
+                    System.out.println(e);
+                    verificacion = false;
+                }
+                clear();
+                System.out.println("Autobus creado con exito");
+                System.out.println(autobusList.getLast().toString());
+            } while (!verificacion);
+        }
     }
 
-    static void case4() {
+    static void infoAutobus() {
         clear();
         for (autobus autobus : autobusList) {
             System.out.println(autobus.getMatricula());
@@ -314,7 +325,7 @@ public class central {
         enter(input);
     }
 
-    static void case5() {
+    static void infoAutobusList() {
         clear();
         for (autobus autobus : autobusList) {
             System.out.println(autobus.toString());
@@ -322,7 +333,7 @@ public class central {
         enter(input);
     }
 
-    static void case6() {
+    static void modificarRuta() {
         clear();
         for (autobus autobus : autobusList) {
             System.out.println(autobus.getMatricula());
@@ -357,7 +368,7 @@ public class central {
         }
     }
 
-    static void case7() {
+    static void modificarConductor() {
         try {
             clear();
             for (autobus autobus : autobusList) {
@@ -392,7 +403,7 @@ public class central {
         }
     }
 
-    static void case8() {
+    static void infoConductores() {
         for (conductor conductor : conductorList) {
             System.out.println(conductor.toString());
             if (conductor.isAsignado()) {
@@ -404,7 +415,7 @@ public class central {
         enter(input);
     }
 
-    static void case9() {
+    static void infoRutas() {
         for (ruta ruta : rutalist) {
             System.out.println(ruta.toString());
             if (ruta.isRutaAsignada()) {
@@ -415,6 +426,7 @@ public class central {
         }
         enter(input);
     }
+
     static void inicializarDatos() {
         conductorList.add(new conductor("Juan Perez", "12345678A", 5, "123456789", verificacion));
         conductorList.add(new conductor("Maria Lopez", "87654321B", 3, "987654321", verificacion));

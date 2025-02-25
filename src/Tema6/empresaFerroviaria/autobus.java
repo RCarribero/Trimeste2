@@ -109,7 +109,7 @@ public class autobus {
             this.conductor = conductor;
             this.conductor.setAsignado(true);
         } else {
-            throw new IllegalArgumentException("Este conductoe ya esta asignado");
+            throw new IllegalArgumentException("Este conductor ya esta asignado");
         }
     }
 }
