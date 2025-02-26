@@ -10,19 +10,19 @@ public class reserva {
     private int nºEntradasReservadas;
     private String estadoReserva = "Activa";
 
-    public cliente getCliente() {
+    cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(cliente cliente) {
+    void setCliente(cliente cliente) {
         this.cliente = cliente;
     }
 
-    public pelicula getPelicula() {
+    pelicula getPelicula() {
         return pelicula;
     }
 
-    public void setPelicula(pelicula pelicula, cliente cliente) {
+    void setPelicula(pelicula pelicula, cliente cliente) {
         if (pelicula.getClasficacionPelicula() <= cliente.getEdadCliente()) {
             this.pelicula = pelicula;
         } else {
@@ -30,19 +30,19 @@ public class reserva {
         }
     }
 
-    public LocalDateTime getFechaHora() {
+    LocalDateTime getFechaHora() {
         return fechaHora;
     }
 
-    public void setFechaHora(LocalDateTime fechaHora) {
+    void setFechaHora(LocalDateTime fechaHora) {
         this.fechaHora = fechaHora;
     }
 
-    public int getNºEntradasReservadas() {
+    int getNºEntradasReservadas() {
         return nºEntradasReservadas;
     }
 
-    public void setNºEntradasReservadas(int nºEntradasReservadas) {
+    void setNºEntradasReservadas(int nºEntradasReservadas) {
         if (nºEntradasReservadas <= 5 && nºEntradasReservadas > 0) {
             this.nºEntradasReservadas = nºEntradasReservadas;
         } else {
@@ -50,11 +50,11 @@ public class reserva {
         }
     }
 
-    public String getEstadoReserva() {
+    String getEstadoReserva() {
         return estadoReserva;
     }
 
-    public void setEstadoReserva(String estadoReserva) {
+    void setEstadoReserva(String estadoReserva) {
         boolean verificacion = true;
         for (String estado : estados) {
             if (estado.equalsIgnoreCase(estadoReserva)) {
@@ -74,5 +74,9 @@ public class reserva {
                 + ", fechaHora=" + fechaHora + ", nºEntradasReservadas=" + nºEntradasReservadas + ", estadoReserva="
                 + estadoReserva + "]";
     }
-
+    String mostrarReserva(){
+        return "reserva [Cliente="+cliente+ "pelicula=" + pelicula
+                + ", fechaHora=" + fechaHora + ", nºEntradasReservadas=" + nºEntradasReservadas + ", estadoReserva="
+                + estadoReserva + "]";
+    }
 }

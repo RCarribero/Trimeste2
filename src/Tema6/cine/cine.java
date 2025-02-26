@@ -14,45 +14,48 @@ public class cine {
     static boolean verificacion = true;
 
     public static void main(String[] args) {
-
         do {
-            clear();
-            menu();
-            switch (opcion) {
-                case 1:
-                    clear();
-                    registrarPelicula();
-                    break;
-                case 2:
-                    clear();
-                    registrarCliente();
-                    break;
-                case 3:
-                    clear();
-                    registrarReserva();
-                    break;
-                case 4:
-                    clear();
-                    cancelarReserva();
-                    break;
-                case 5:
-                    clear();
-                    listarPeliculas();
-                    break;
-                case 6:
-                    clear();
-                    listarClientes();
-                    break;
-                case 7:
-                    clear();
-                    listarReserva();
-                    break;
-                case 8:
-                    clear();
-                    System.out.println("Ciao");
-                    break;
-                default:
-                    break;
+            try {
+                clear();
+                menu();
+                switch (opcion) {
+                    case 1:
+                        clear();
+                        registrarPelicula();
+                        break;
+                    case 2:
+                        clear();
+                        registrarCliente();
+                        break;
+                    case 3:
+                        clear();
+                        registrarReserva();
+                        break;
+                    case 4:
+                        clear();
+                        cancelarReserva();
+                        break;
+                    case 5:
+                        clear();
+                        listarPeliculas();
+                        break;
+                    case 6:
+                        clear();
+                        listarClientes();
+                        break;
+                    case 7:
+                        clear();
+                        listarReserva();
+                        break;
+                    case 8:
+                        clear();
+                        System.out.println("Ciao");
+                        break;
+                    default:
+                        break;
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println(e);
             }
         } while (opcion != 8);
     }
@@ -60,7 +63,7 @@ public class cine {
     static void listarReserva() {
         for (reserva reserva : reservasList) {
             if (reserva.getEstadoReserva().equalsIgnoreCase("Activa")) {
-                System.out.println(reserva.toString());
+                System.out.println(reserva.mostrarReserva());
             }
         }
         enter(input);
@@ -216,7 +219,7 @@ public class cine {
             try {
                 verificacion = true;
                 for (cliente cliente : clientesList) {
-                    System.out.println(cliente.getDniCliente());
+                    System.out.println(cliente.getDniCliente() + " : " + cliente.getNombreApellidoCliente());
                 }
                 System.out.println("Indique que cliente es (dni)");
                 String dniCliente = input.nextLine();
