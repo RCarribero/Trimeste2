@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <form method="get">
+        <fieldset id="formulario">
+            <legend>hola</legend>
+            <p id="nombre"><label form="nombre">nombre: <input type="text" id="nombre" placeholder="nombre" name="nombre"> </label></p>
+            <p><label for="apellido">apellido: <input type="text" id="apellido" placeholder="apellido" name="apellido"> </label></p>
+            <p><label for="puesto">Puesto de trabajo: <input type="text" id="puesto" placeholder="puesto" name="puesto"> </label></p>
+            <p><label for="contraseña">contraseña: <input type="password" id="contraseña" placeholder="contraseña" name="passwd"></label></p>
+            <button type="submit" id="enviar">Enviar</button>
+        </fieldset>
+
+        <fieldset class="Estatura">
+            <legend>estaturas</legend>
+        <p class="Estatura"><label> Estatura:
+            <select class="estatura" name="estatura">
+                <option value="1,50 a 1,60">1,50 a 1,60</option>
+                <option value="1,70 a 1,60">1,70 a 1,60</option>
+                <option value="1,90 a 1,60">1,90 a 1,60</option>
+                <option value="2,00 a 1,60">2,00 a 1,60</option>
+            </select>
+            
+        </label></p>
+    </fieldset>
+
+    
+    <p>Colores de ojos:</p>
+    <input type="checkbox" value="Marron" id="marron" name="color">
+    <label for="marron" id="marron">Marron</label>
+    <br>
+    <input type="checkbox" value="Azul"  id="azul" name="color">
+    <label for="azul">Azul</label>
+    <br>
+    <input type="checkbox" value="Caca" id="caca" name="color">
+    <label for="caca">Caca</label>
+    <br>
+    <input type="checkbox" value="Verde" id="verde" name="color">
+    <label for="verde">Verde</label>
+    <br>
+
+
+    <p>Dime tu genero:</p>
+    <input type="radio" value="Masculino" id="Masculino" name="genero">
+    <label for="Masculino">Masculino</label>
+    <br>
+    <input type="radio" value="Femenino" id="Femenino" name="genero">
+    <label for="Femenino">Femenino</label>
+    <br>
+    
+    </form>
+
+    <table border="10">
+        <tr>
+            <th>letra</th>
+            <th>apellido</th>
+            <th>apellido2</th>
+            <th>apellido3</th>
+        </tr>
+        <tr>
+            
+            <td colspan="2">a</td>
+            <td rowspan="2">b</td>
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>f</td>
+            <td>g</td>
+            <td >h</td>
+        </tr>
+        <tr>
+            <td>k</td>
+            <td>l</td>
+            <td>m</td>
+            <td>n</td>
+        </tr>
+
+    </table>
+
+    <ol type="1"><!--Lista ordenada-->
+        <p>Cosas que me gustan</p>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+    </ol>
+
+    <ul><!--Lista no ordenada-->
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>f</li>
+    </ul>
+
+    <div id="principal">
+
+        <p>hola feli</p>
+        <p>hola ruben</p>
+        <p>hola tortu</p>
+
+    </div>
+
+    <div class="gay">
+
+        <p>gay feli</p>
+        <p>gay ruben</p>
+        <p>gay tortu</p>
+
+    </div>
+    <img src="descarga.jpg" class="imagen">
+</body>
+
+<!--tr*1>td*3-->
+</html>

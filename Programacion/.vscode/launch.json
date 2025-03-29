@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio1",
+            "request": "launch",
+            "mainClass": "src.Tema6.Ejercicio1.Ejercicio1",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
+            "name": "menuPrincipal",
+            "request": "launch",
+            "mainClass": "src.Tema6.TorneoVideojuego.menuPrincipal",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
+            "name": "menuInteractivo",
+            "request": "launch",
+            "mainClass": "src.Tema6.gestorContacto.menuInteractivo",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
+            "name": "liga",
+            "request": "launch",
+            "mainClass": "src.Tema6.liga.liga",
+            "projectName": "Programacion_c19e8e18"
+        },
+        {
+            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "com.example.App",

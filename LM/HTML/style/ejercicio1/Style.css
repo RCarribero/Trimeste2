@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid  black;
+    box-shadow: 1px 1px 1px 1px ;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+    color: #666;
+}
+
+div {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#foto-perfil{
+    width: 200px;
+    height: 200px;
+}
+.btn-seguir:hover{
+    background-color: aqua;
+}
+.btn-seguir:active{
+    background-color: rebeccapurple;
+}

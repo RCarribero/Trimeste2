@@ -1,0 +1,43 @@
+body{
+    background-color: whitesmoke;
+}
+#principal{
+    background-color: black;
+}
+.gay{
+    background-color: blueviolet;
+}
+#formulario{
+    background-color: azure;
+}
+#nombre{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: grey;
+}
+.estatura{
+    border-radius: 10%;
+}
+#marron{
+    color: brown;
+}
+#masculino{
+    background-color: red;
+    color: chartreuse;
+}
+#femenino{
+    background-color: pink;
+    color: blueviolet;
+}
+#enviar{
+    background-color: rgb(218, 250, 215);
+}
+#enviar:hover{
+    background-color: aqua;
+}
+#enviar:active{
+    background-color: rgb(255, 0, 0);
+}
+.imagen{
+    border-radius: 50%;
+    box-shadow: 0 30px 50px 0 black;
+}

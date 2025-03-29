@@ -1,0 +1,119 @@
+<!-- Estructura HTML:
+La página debe incluir las siguientes secciones principales:
+Cabecera (header) con el título "Casa Rural El Descanso" y un menú de navegación horizontal.
+Sección de introducción (section) con una descripción general de la casa rural.
+Galería de imágenes (section) que muestre al menos tres fotos de la casa.
+Sección de servicios (section) con una lista de las comodidades que ofrece la casa.
+Sección de ubicación (section) con un mapa (puedes simularlo con una imagen) y detalles sobre la ubicación.
+Sección de contacto (section) con un pequeño formulario de contacto.
+Pie de página (footer) con información de contacto y derechos de autor.
+El menú de navegación debe incluir enlaces a cada una de las secciones de la página.
+Contenido:
+El contenido debe ser informativo y atractivo para los posibles inquilinos.
+Utilizar encabezados (h1, h2, h3), párrafos (p), listas (ul, li) y otros elementos HTML apropiados.
+Estilos CSS:
+Aplicar estilos CSS para crear un diseño visualmente atractivo y fácil de usar.
+Definir fuentes, colores, márgenes y otros estilos para mejorar la presentación.
+La galería de fotos debe realizarse de forma horizontal.
+Requisitos Adicionales:
+El código debe ser válido y bien estructurado.
+Se valorará la creatividad y la atención al detalle. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Casa Rural El Descanso</title>
+</head>
+
+<body bgcolor="whitesmoke">
+    <div id="cabezera">
+        <header id="cabezeraTexto">Casa Rural El Descanso</header>
+        <nav>
+            <a href="#introduccion" class="navegacion">Introducción 🏠</a>
+            <a href="#galeria" class="navegacion">Galería 🎞️</a>
+            <a href="#servicios" class="navegacion">Servicios 🧑‍🍳</a>
+            <a href="#ubicacion" class="navegacion">Ubicación 📌</a>
+            <a href="#formularioContacto" class="navegacion">Contacto 📞</a>
+        </nav>
+    </div>
+    <section id="introduccion">
+        <h2>Bienvenidos a El Descanso</h2>
+        <p>Situada en un entorno natural privilegiado, Casa Rural El Descanso ofrece el refugio perfecto para escapar de
+            la rutina y conectar con la naturaleza. Nuestra casa combina el encanto rústico con todas las comodidades
+            modernas que necesita para disfrutar de una estancia inolvidable.</p>
+    </section>
+    <hr>
+    <section class="galeria">
+        <h2>Imagenes de la casa</h2>
+        <img src="./08711923-fccc-442f-a986-2defe759e0f9.avif" alt="Imagen de la casa" class="imagenesCasa">
+        <img src="./2c7c9b7b-abbc-4b0b-804b-fd3c5f747511.jpeg" alt="Imagen de la casa" class="imagenesCasa">
+        <img src="./be7c7ae7-008e-4cc2-bc1d-c6ab164b84c0.avif" alt="Imagen de la casa" class="imagenesCasa">
+    </section>
+    <hr>
+    <section id="servicios">
+        <h2>Lista de comodidades</h2>
+        <ul>
+            <li>Wi-Fi de alta velocidad en toda la casa</li>
+            <li>Piscina privada con zona de descanso</li>
+            <li>Jardín amplio con barbacoa</li>
+            <li>Cocina totalmente equipada</li>
+            <li>Calefacción y aire acondicionado</li>
+            <li>Aparcamiento privado</li>
+        </ul>
+    </section>
+    <hr>
+    <section>
+        <h2>Ubicación en el mapa</h2>
+        <p>Nuestra casa rulal se ubica a las afueras de la ciudad, en la zona, La Jara, siendo una de las zonas
+            mas tranquilas de Sanlucar de Barrameda, estando a tan solo 5 minutos a pie de la preciosa playa.
+        </p>
+        <a
+            href="https://www.google.es/maps/place/11540+Sanl%C3%BAcar+de+Barrameda,+C%C3%A1diz/@36.7594021,-6.3531974,13z/data=!4m6!3m5!1s0xd0dde12a2f8e5ef:0xe9bbc21d97ce48c6!8m2!3d36.7720608!4d-6.3549026!16zL20vMDNscW12?entry=ttu&g_ep=EgoyMDI1MDMxMC4wIKXMDSoASAFQAw%3D%3D">
+            <img src="./Mapa-Sanlucar-de-Barrameda.jpg" alt="Ciudad de ubicación" id="mapa"></a>
+    </section>
+    <hr>
+    <section id="formularioContacto">
+        <h2>Contacto</h2>
+        <form method="post" class="container">
+            <fieldset class="galeria">
+                <legend>Formulario de contacto</legend>
+                <fieldset class="form">
+                    <label for="nombre">Introduce su nombre:</label>
+                    <br>
+                    <br>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                </fieldset>
+                <fieldset class="form">
+                    <label for="email">Introduce su email:</label>
+                    <br>
+                    <br>
+                    <input type="email" name="email" id="email" placeholder="Correo Electronico" required>
+                </fieldset>
+                <fieldset class="form">
+                    <label for="telefono">Introduce su numero de telefono:</label>
+                    <br>
+                    <br>
+                    <input type="tel" name="telefono" id="telefono" placeholder="Numero telefono" pattern="[0-9]{9}"
+                        required>
+                </fieldset>
+                <!-- limitando a 9 numeros enteros -->
+                <br>
+                <br>
+                <button type="submit">Enviar</button>
+                <!-- &nbsp; Sirve para indtroducir un espacion en blanco ya que html los espacios en blanco innecesario los borra -->
+                &nbsp;
+                &nbsp;
+                <button type="reset">Reiniciar</button>
+            </fieldset>
+            <br>
+        </form>
+    </section>
+    <footer id="pieDePagina">
+        <p>- &copy; Todos los derechos reservados - <br>Rubén Carribero Garcia</p>
+    </footer>
+</body>
+
+</html>

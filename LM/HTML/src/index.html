@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Formulario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <form action="procesar.php" method="post">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="name">Nombre completo: </label>
+            <input type="Nombre" id="nombre" name="Nombre completo" placeholder="Ejemplo: Juan Pérez" required>
+            <br>
+            <label for="name">Corre electronico: </label>
+            <input type="email" id="email" name="email" placeholder="Ejemplo: ejemplo@correo.com" required>
+            <br>
+            <label for="name">Contraseña: </label>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Minimo 6 caracteres" required
+                minlength="6">
+            <br>
+            <label for="name">Fecha de Nacimiento: </label>
+            <input type="date" id="fecha" name="fecha">
+            <br>
+            <label for="name">Edad: </label>
+            <input type="number" id="edad" name="edad" min="18">
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Informacion adicional</legend>
+            <p>Genero:</p>
+            <input type="radio" id="Masculino" name="genero">
+            <label for="">Masculino</label>
+            <input type="radio" id="Femenino" name="genero">
+            <label for="">Femenino</label>
+            <input type="radio" id="Otro" name="genero">
+            <label for="">Otro</label>
+            <input type="radio" id="Prefiero" name="genero">
+            <label for="">Prefiero no decirlo</label>
+            <p>Intereses: </p>
+            <label for="pais">Pais de residencia: </label>
+            <select name="pais" id="pais">
+                <option value="es">España</option>
+                <option value="mex">Mexico</option>
+                <option value="fra">Francia</option>
+                <option value="ger">Alemania</option>
+                <option value="din">Dinamarca</option>
+            </select>
+            <input type="checkbox" id="Deporte">
+            <label for="">Deportes</label>
+            <input type="checkbox" id="Tec">
+            <label for="">Tecnologia</label>
+            <input type="checkbox" id="music">
+            <label for="">Musica</label>
+            <input type="checkbox" id="viajes">
+            <label for="">Viajes</label>
+            <input type="checkbox" id="lectura">
+            <label for="">Lectura</label>
+        </fieldset>
+        <fieldset>
+            <legend>Foto de Perfil</legend>
+            <P>Sube tu foto de perfil:</p> <input type="file" accept=".jpg .png">
+        </fieldset>
+        <fieldset>
+            <legend>Terminos y condiciones</legend>
+            <input type="checkbox" required>
+            <label>Acepto los terminos y condiciones</label>
+        </fieldset>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+</body>
+
+</html>

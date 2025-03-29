@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <H1>Encuesta de satisfacción del restaurante "Dia de estambul"</H1>
+    <p>El kebab dia de estambul quiere cautibar sus paladares con un sabor de kebab intenso y sabroso, kebab grande y sabrosos, el verdadero bueno, bonito y barato.</p>
+    <form action="post">
+        <fieldset>
+            <fieldset>
+                <legend>Datos del usuario</legend>
+                <input type="text" placeholder="Introduce su nombre">
+                <br>
+                <br>
+                <input type="email" placeholder="Introduce su mail">
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Valoracion de la experiencia</legend>
+                <P>Valore la experiencia del 1-5</P>
+                <label for="1">1</label>
+                <input type="radio" id="1" name="Valoracion">
+                <label for="2">2</label>
+                <input type="radio" id="2" name="Valoracion">
+                <label for="3">3</label>
+                <input type="radio" id="3" name="Valoracion">
+                <label for="4">4</label>
+                <input type="radio" id="4" name="Valoracion">
+                <label for="5">5</label>
+                <input type="radio" id="5" name="Valoracion">
+                <br>
+                <p>Aspecto que mas disfrutó</p>
+                <label for="">Comida</label>
+                <input type="checkbox" name="Comida" id="comida">
+                <label for="">servicio</label>
+                <input type="checkbox" name="servicio" id="comida">
+                <label for="">ambiente</label>
+                <input type="checkbox" name="ambiente" id="comida">
+                <label for="">precio</label>
+                <input type="checkbox" name="precio" id="comida">
+                <select name="plato favorito" id="plato">
+                    <option value="Comida">Comida</option>
+                    <option value="Servicio">Servicio</option>
+                    <option value="Ambiente">Ambiente</option>
+                    <option value="Precio">precio</option>
+                </select>
+            </fieldset>
+            <br>
+            <Fieldset>
+                <legend>Sugerencia y comentario</legend>
+                <textarea name="Sugerencia" id="Sugerencia" placeholder="Introduce su Sugerencia"></textarea>
+            </Fieldset>
+            <br>
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+</body>
+</html>

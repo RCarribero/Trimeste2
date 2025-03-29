@@ -1,0 +1,11 @@
+#pagina{
+    text-align: center;
+    color: white;
+    background-color: green;
+    padding: 25px;
+    font-size: x-large;
+}
+.img{
+    border-radius: 10%;
+    width: 300px;
+}
