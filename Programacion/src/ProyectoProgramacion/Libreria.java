@@ -1,4 +1,4 @@
-package src.ProyectoProgramacion;
+package ProyectoProgramacion;
 
 import java.io.IOException;
 import java.util.ArrayList;

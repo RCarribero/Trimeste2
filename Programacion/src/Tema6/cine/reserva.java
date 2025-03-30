@@ -1,4 +1,4 @@
-package src.Tema6.cine;
+package Tema6.cine;
 
 import java.time.LocalDateTime;
 

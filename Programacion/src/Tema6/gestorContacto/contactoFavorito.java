@@ -1,4 +1,4 @@
-package src.Tema6.gestorContacto;
+package Tema6.gestorContacto;
 
 public class contactoFavorito extends contacto {
     private int prioridad;

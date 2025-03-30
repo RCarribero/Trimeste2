@@ -1,5 +1,4 @@
-package src.Tema5.ED;
-
+package Tema5.ED;
 
 import java.util.Scanner;
 

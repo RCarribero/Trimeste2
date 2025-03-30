@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class jugador extends persona {
     private static final String[] rangos= {"Bronce","Plata","Oro","Diamante","Elite"};
     
+    private String rango;
+    private equipo equipo;
     @Override
     public String toString() {
         return "jugador [rango=" + rango + ", IdJugador="+ getIdJugador()+ ", Nombre=" + getNombre() + ", Edad="+ getEdad() + "]";
     }
-    private String rango;
-    private equipo equipo;
     public String getRango() {
         return rango;
     }

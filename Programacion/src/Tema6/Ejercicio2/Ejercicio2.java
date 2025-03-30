@@ -1,4 +1,4 @@
-package src.Tema6.Ejercicio2;
+package Tema6.Ejercicio2;
 
 public class Ejercicio2 {
     public static void main(String[] args) {

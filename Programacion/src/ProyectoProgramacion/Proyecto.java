@@ -1,4 +1,4 @@
-package src.ProyectoProgramacion;
+package ProyectoProgramacion;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package src.Tema6.Ejercicio1;
+package Tema6.Ejercicio1;
 public class Ejercicio1 {
     public static void main(String[] args) {
         coches coche1= new coches("Hyunday", "El primero", 1998);

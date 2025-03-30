@@ -1,4 +1,4 @@
-package src.Tema6.Gestor;
+package Tema6.Gestor;
 import java.util.Scanner;
 
 public class Banco {

@@ -1,4 +1,4 @@
-package src.ProyectoProgramacion;
+package ProyectoProgramacion;
 
 public class Jugador2 extends Barco {
     static int contadorBarcos=5;

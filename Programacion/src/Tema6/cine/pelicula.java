@@ -1,4 +1,4 @@
-package src.Tema6.cine;
+package Tema6.cine;
 
 import java.util.ArrayList;
 import java.util.List;

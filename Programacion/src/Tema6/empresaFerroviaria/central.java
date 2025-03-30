@@ -1,4 +1,4 @@
-package src.Tema6.empresaFerroviaria;
+package Tema6.empresaFerroviaria;
 
 import java.util.ArrayList;
 import java.util.List;

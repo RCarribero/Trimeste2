@@ -2,6 +2,7 @@ package Tema6.TorneoVideojuego;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class menuPrincipal {
@@ -11,7 +12,7 @@ public class menuPrincipal {
     static List<equipo> listEquipos = new ArrayList<>();
     static List<torneo> listTorneos = new ArrayList<>();
     static boolean verificacion = true;
-
+    static Random random = new Random();
     public static void main(String[] args) {
         do {
             try {
@@ -48,34 +49,34 @@ public class menuPrincipal {
                         listarJugadoreEquipo();
                         break;
                     case 9:
-
+                        listarJugadores();
                         break;
                     case 10:
-
+                        listarEquipos();
                         break;
                     case 11:
-
+                        listarTorneos();
                         break;
                     case 12:
-
+                        buscarJugadorId();
                         break;
                     case 13:
-
+                        borrarJugador();
                         break;
                     case 14:
-
+                        borrarEquipoVacio();
                         break;
                     case 15:
-
+                        System.out.println("Gracias por usar nuestro programa");
                         break;
                     case 16:
-
+                        tranferirJugadores();
                         break;
                     case 17:
-
+                        clasificacionTorneo();
                         break;
                     case 18:
-
+                        generarTorneo();
                         break;
                     default:
                         break;
@@ -86,28 +87,94 @@ public class menuPrincipal {
         } while (opcion != 15);
     }
 
-    private static void listarJugadoreEquipo() {
+    private static void generarTorneo() {
+        torneo torneo = buscarTorneo();
+        if (torneo.getListEquipos().size()<2)
+        throw new IllegalArgumentException("Tiene que haber la menos 2 equipos");
+        for (equipo equipo : torneo.getListEquipos()) {
+            for (int i = 0; i < torneo.getListEquipos().size()-1; i++) {
+                int num = random.nextInt(101); 
+                torneo.aumentarPuntuacion(equipo, num);
+            }
+        }
+    }
+
+    private static void clasificacionTorneo() {
+        torneo torneo = buscarTorneo();
+        System.out.println(torneo.getPuntuaciones());
+    }
+
+    private static void tranferirJugadores() {
+        equipo equipo = buscarEquipo();
+        if (equipo.getListJugadores().size()>=equipo.getCapacidadMax()) 
+        throw new IllegalArgumentException("El equipo esta lleno, busque otro equipo");
+        jugador jugador = buscarJugador();
+        if (jugador.getEquipo()==null)
+        throw new IllegalArgumentException("EL jugador no puede ser transferido ya que no esta asignado a ningun equipo");
+        jugador.getEquipo().borrarJugador(jugador);
+        equipo.setListJugadores(jugador);
+    }
+
+    public static void borrarEquipoVacio() {
+        equipo equipo = buscarEquipo();
+        if (equipo.getListJugadores().isEmpty()) {
+            listEquipos.remove(equipo);
+            for (torneo torneo : listTorneos) {
+                torneo.borrarEquipo(equipo);
+            }
+        } else {
+            throw new IllegalArgumentException("El equipo no se puede borrar, contiene jugadores");
+        }
+    }
+
+    public static void borrarJugador() {
+        jugador jugador = buscarJugador();
+        jugador.removeID(jugador);
+        listJugadores.remove(jugador);
+        jugador.getEquipo().borrarJugador(jugador);
+        for (torneo torneo : listTorneos) {
+            torneo.borrarJugador(jugador);
+        }
+    }
+
+    public static void buscarJugadorId() {
+        System.out.println(buscarJugador());
+    }
+
+    public static void listarEquipos() {
+        System.out.println(listEquipos);
+    }
+
+    public static void listarTorneos() {
+        System.out.println(listTorneos);
+    }
+
+    public static void listarJugadores() {
+        System.out.println(listJugadores);
+    }
+
+    public static void listarJugadoreEquipo() {
         for (jugador jugador : buscarEquipo().getListJugadores()) {
             System.out.println(jugador);
         }
     }
 
-    private static void registrarPuntuacionEquipo() {
+    public static void registrarPuntuacionEquipo() {
         buscarTorneo().setPuntuaciones(buscarEquipo(), puntuacion());
     }
 
-    private static int puntuacion() {
+    public static int puntuacion() {
         System.out.println("Indica la puntuacion del equipo");
         return input.nextInt();
     }
 
-    private static void asignarEquipoATorneo() {
+    public static void asignarEquipoATorneo() {
         torneo torneo = buscarTorneo();
         torneo.setListEquipos(buscarEquipo());
         System.out.println(torneo);
     }
 
-    private static void crearTorneo() {
+    public static void crearTorneo() {
         torneo torneo = new torneo();
         do {
             try {
@@ -132,7 +199,7 @@ public class menuPrincipal {
         listTorneos.add(torneo);
     }
 
-    private static void cambiarRangoJugador() {
+    public static void cambiarRangoJugador() {
         jugador jugador = buscarJugador();
         System.out.println("Indica un nuevo rango");
         jugador.setRango(input.nextLine());
@@ -153,7 +220,9 @@ public class menuPrincipal {
             do {
                 try {
                     verificacion = false;
-                    System.out.println(listEquipos);
+                    for (equipo equipo1 : listEquipos) {
+                        System.out.println(equipo1.getCodigoEquipo());
+                    }
                     System.out.println("Indica el codigo de equipo");
                     String codigo = input.nextLine();
                     for (equipo equipo2 : listEquipos) {
@@ -181,7 +250,9 @@ public class menuPrincipal {
             do {
                 try {
                     verificacion = false;
-                    System.out.println(listTorneos);
+                    for (torneo torneo1 : listTorneos) {
+                        System.out.println(torneo1.getCodigoTorneo());
+                    }
                     System.out.println("Indica el codigo de torneo");
                     String codigo = input.nextLine();
                     for (torneo torneo2 : listTorneos) {
@@ -209,7 +280,9 @@ public class menuPrincipal {
             do {
                 try {
                     verificacion = false;
-                    System.out.println(listJugadores);
+                    for (jugador jugador1 : listJugadores) {
+                        System.out.println(jugador1.getIdJugador());
+                    }
                     System.out.println("Indica el id del jugador");
                     String codigo = input.nextLine();
                     for (jugador jugador2 : listJugadores) {

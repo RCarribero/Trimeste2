@@ -1,4 +1,4 @@
-package src.Tema5.Array;
+package Tema5.Array;
 
 import java.util.Arrays;
 import java.util.Scanner;

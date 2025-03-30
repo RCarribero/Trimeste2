@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class persona {
+    
     private String idJugador;
+
     private List<String> unicoIdJugador = new ArrayList<>();
     private String nombre;
     private int edad;
+    public void removeID(jugador jugador) {
+        this.unicoIdJugador.remove(jugador.getIdJugador());
+    }
 
     public String getIdJugador() {
         return idJugador;
