@@ -261,9 +261,8 @@ public class menuPrincipal {
                             verificacion = true;
                         }
                     }
-                    if (!verificacion) {
+                    if (!verificacion) 
                         throw new IllegalArgumentException("torneo no encontrado");
-                    }
                 } catch (Exception e) {
                     System.out.println(e);
                 }

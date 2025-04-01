@@ -24,6 +24,8 @@ class jugador extends persona {
         return equipo;
     }
     void setEquipo(equipo equipo) {
+        if (equipo!=null) 
+        throw new IllegalArgumentException("Este jugador ya esta asignado a un equipo");
         this.equipo = equipo;
     }
 }
