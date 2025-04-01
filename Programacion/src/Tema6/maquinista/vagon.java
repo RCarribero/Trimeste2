@@ -1,4 +1,4 @@
-package src.Tema6.maquinista;
+package Tema6.maquinista;
 
 import java.util.ArrayList;
 

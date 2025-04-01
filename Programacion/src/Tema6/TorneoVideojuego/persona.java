@@ -3,22 +3,22 @@ package Tema6.TorneoVideojuego;
 import java.util.ArrayList;
 import java.util.List;
 
-public class persona {
+class persona {
     
     private String idJugador;
 
     private List<String> unicoIdJugador = new ArrayList<>();
     private String nombre;
     private int edad;
-    public void removeID(jugador jugador) {
+    void removeID(jugador jugador) {
         this.unicoIdJugador.remove(jugador.getIdJugador());
     }
 
-    public String getIdJugador() {
+    String getIdJugador() {
         return idJugador;
     }
 
-    public void setIdJugador(String idJugador) {
+    void setIdJugador(String idJugador) {
         if (!unicoIdJugador.contains(idJugador)) {
             if (idJugador.matches("^PL-\\d{4}$")) {
                 this.idJugador = idJugador;
@@ -32,11 +32,11 @@ public class persona {
 
     }
 
-    public String getNombre() {
+    String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    void setNombre(String nombre) {
         if (nombre.matches("^[a-zA-Z\\s]{3,50}$")) {
             this.nombre = nombre;
         } else {
@@ -44,11 +44,11 @@ public class persona {
         }
     }
 
-    public int getEdad() {
+    int getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    void setEdad(int edad) {
         if (edad >= 12 && edad <= 100) {
             this.edad = edad;
         } else {

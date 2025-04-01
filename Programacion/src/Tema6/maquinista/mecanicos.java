@@ -1,4 +1,4 @@
-package src.Tema6.maquinista;
+package Tema6.maquinista;
 
 public class mecanicos  {
     private static final String[] rangos = { "frenos", "hidraulica", "electricidad", "motor" };

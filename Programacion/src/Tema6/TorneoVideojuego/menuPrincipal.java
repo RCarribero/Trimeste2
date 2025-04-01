@@ -87,7 +87,7 @@ public class menuPrincipal {
         } while (opcion != 15);
     }
 
-    private static void generarTorneo() {
+    static void generarTorneo() {
         torneo torneo = buscarTorneo();
         if (torneo.getListEquipos().size()<2)
         throw new IllegalArgumentException("Tiene que haber la menos 2 equipos");
@@ -99,12 +99,12 @@ public class menuPrincipal {
         }
     }
 
-    private static void clasificacionTorneo() {
+    static void clasificacionTorneo() {
         torneo torneo = buscarTorneo();
         System.out.println(torneo.getPuntuaciones());
     }
 
-    private static void tranferirJugadores() {
+    static void tranferirJugadores() {
         equipo equipo = buscarEquipo();
         if (equipo.getListJugadores().size()>=equipo.getCapacidadMax()) 
         throw new IllegalArgumentException("El equipo esta lleno, busque otro equipo");
@@ -115,7 +115,7 @@ public class menuPrincipal {
         equipo.setListJugadores(jugador);
     }
 
-    public static void borrarEquipoVacio() {
+    static void borrarEquipoVacio() {
         equipo equipo = buscarEquipo();
         if (equipo.getListJugadores().isEmpty()) {
             listEquipos.remove(equipo);
@@ -127,7 +127,7 @@ public class menuPrincipal {
         }
     }
 
-    public static void borrarJugador() {
+    static void borrarJugador() {
         jugador jugador = buscarJugador();
         jugador.removeID(jugador);
         listJugadores.remove(jugador);
@@ -137,44 +137,44 @@ public class menuPrincipal {
         }
     }
 
-    public static void buscarJugadorId() {
+    static void buscarJugadorId() {
         System.out.println(buscarJugador());
     }
 
-    public static void listarEquipos() {
+    static void listarEquipos() {
         System.out.println(listEquipos);
     }
 
-    public static void listarTorneos() {
+    static void listarTorneos() {
         System.out.println(listTorneos);
     }
 
-    public static void listarJugadores() {
+    static void listarJugadores() {
         System.out.println(listJugadores);
     }
 
-    public static void listarJugadoreEquipo() {
+    static void listarJugadoreEquipo() {
         for (jugador jugador : buscarEquipo().getListJugadores()) {
             System.out.println(jugador);
         }
     }
 
-    public static void registrarPuntuacionEquipo() {
+    static void registrarPuntuacionEquipo() {
         buscarTorneo().setPuntuaciones(buscarEquipo(), puntuacion());
     }
 
-    public static int puntuacion() {
+    static int puntuacion() {
         System.out.println("Indica la puntuacion del equipo");
         return input.nextInt();
     }
 
-    public static void asignarEquipoATorneo() {
+    static void asignarEquipoATorneo() {
         torneo torneo = buscarTorneo();
         torneo.setListEquipos(buscarEquipo());
         System.out.println(torneo);
     }
 
-    public static void crearTorneo() {
+    static void crearTorneo() {
         torneo torneo = new torneo();
         do {
             try {
@@ -199,20 +199,20 @@ public class menuPrincipal {
         listTorneos.add(torneo);
     }
 
-    public static void cambiarRangoJugador() {
+    static void cambiarRangoJugador() {
         jugador jugador = buscarJugador();
         System.out.println("Indica un nuevo rango");
         jugador.setRango(input.nextLine());
     }
 
-    public static void asignarJugadorEquipo() {
+    static void asignarJugadorEquipo() {
         equipo equipo = buscarEquipo();
         jugador jugador = buscarJugador();
         jugador.setEquipo(equipo);
         equipo.setListJugadores(jugador);
     }
 
-    public static equipo buscarEquipo() {
+    static equipo buscarEquipo() {
         if (listEquipos.isEmpty()) {
             throw new IllegalArgumentException("No existen equipos");
         } else {
@@ -242,7 +242,7 @@ public class menuPrincipal {
         }
     }
 
-    public static torneo buscarTorneo() {
+    static torneo buscarTorneo() {
         if (listTorneos.isEmpty()) {
             throw new IllegalArgumentException("No existen torneos");
         } else {
@@ -272,7 +272,7 @@ public class menuPrincipal {
         }
     }
 
-    public static jugador buscarJugador() {
+    static jugador buscarJugador() {
         if (listJugadores.isEmpty()) {
             throw new IllegalArgumentException("No existen jugadores");
         } else {
@@ -302,7 +302,7 @@ public class menuPrincipal {
         }
     }
 
-    public static void crearUnNuevoEquipo() {
+    static void crearUnNuevoEquipo() {
         equipo equipo = new equipo();
         do {
             try {
@@ -328,7 +328,7 @@ public class menuPrincipal {
         listEquipos.add(equipo);
     }
 
-    public static void crearUnNuevoJugador() {
+    static void crearUnNuevoJugador() {
         jugador jugador = new jugador();
         do {
             try {

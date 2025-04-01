@@ -3,29 +3,26 @@ package Tema6.TorneoVideojuego;
 import java.util.ArrayList;
 import java.util.List;
 
-public class equipo {
+class equipo {
     private String codigoEquipo;
-
     private List<String> unicoCodigoEquipo = new ArrayList<>();
     private String nombreEquipo;
     private List<jugador> listJugadores = new ArrayList<>();
     private final int capacidadMax = 5;
-    /**
-     * @return the capacidadMax
-     */
-    public int getCapacidadMax() {
+
+    int getCapacidadMax() {
         return capacidadMax;
     }
 
-    public String getCodigoEquipo() {
+    String getCodigoEquipo() {
         return codigoEquipo;
     }
 
-    public void borrarJugador(jugador jugador) {
+    void borrarJugador(jugador jugador) {
         this.listJugadores.remove(jugador);
     }
 
-    public void setCodigoEquipo(String codigoEquipo) {
+    void setCodigoEquipo(String codigoEquipo) {
         if (!unicoCodigoEquipo.contains(codigoEquipo)) {
             if (codigoEquipo.matches("^EQ-[A-Z]{3}$")) {
                 this.codigoEquipo = codigoEquipo;
@@ -39,7 +36,7 @@ public class equipo {
 
     }
 
-    public String getNombreEquipo() {
+    String getNombreEquipo() {
         return nombreEquipo;
     }
 
@@ -49,7 +46,7 @@ public class equipo {
                 + listJugadores + ", capacidadMax=" + capacidadMax + "]";
     }
 
-    public void setNombreEquipo(String nombreEquipo) {
+    void setNombreEquipo(String nombreEquipo) {
         if (nombreEquipo.matches("^[a-zA-Z\\s]{3,50}$")) {
             this.nombreEquipo = nombreEquipo;
         } else {
@@ -57,11 +54,11 @@ public class equipo {
         }
     }
 
-    public List<jugador> getListJugadores() {
+    List<jugador> getListJugadores() {
         return listJugadores;
     }
 
-    public void setListJugadores(jugador jugador) {
+    void setListJugadores(jugador jugador) {
         if (listJugadores.size() < capacidadMax) {
             this.listJugadores.add(jugador);
         } else {
