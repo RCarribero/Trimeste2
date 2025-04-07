@@ -91,10 +91,10 @@ public class menuPrincipal {
         torneo torneo = buscarTorneo();
         if (torneo.getListEquipos().size()<2)
         throw new IllegalArgumentException("Tiene que haber la menos 2 equipos");
-        for (equipo equipo : torneo.getListEquipos()) {
-            for (int i = 0; i < torneo.getListEquipos().size()-1; i++) {
-                int num = random.nextInt(101); 
-                torneo.aumentarPuntuacion(equipo, num);
+        for (int i = 0; i < torneo.getListEquipos().size(); i++) {
+            for (int j = i+1; j < torneo.getListEquipos().size() ; j++) {
+                torneo.setPuntuaciones(torneo.getListEquipos().get(i), random.nextInt(1,100));
+                torneo.setPuntuaciones(torneo.getListEquipos().get(j), random.nextInt(1,100));
             }
         }
     }

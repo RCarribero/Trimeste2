@@ -23,18 +23,16 @@ class equipo {
     }
 
     void setCodigoEquipo(String codigoEquipo) {
-        if (!unicoCodigoEquipo.contains(codigoEquipo)) {
-            if (codigoEquipo.matches("^EQ-[A-Z]{3}$")) {
-                this.codigoEquipo = codigoEquipo;
-                unicoCodigoEquipo.add(codigoEquipo);
-            } else {
-                throw new IllegalArgumentException("El codigo de equipo tiene un formato incorrecto");
-            }
-        } else {
+        if (unicoCodigoEquipo.contains(codigoEquipo)) 
             throw new IllegalArgumentException("El codigo de equipo ya esta en uso");
-        }
-
-    }
+        if (!codigoEquipo.matches("^EQ-[A-Z]{3}$")) 
+            throw new IllegalArgumentException("El codigo de equipo tiene un formato incorrecto");
+        this.codigoEquipo = codigoEquipo;
+        unicoCodigoEquipo.add(codigoEquipo);
+    } 
+    
+    
+    
 
     String getNombreEquipo() {
         return nombreEquipo;
