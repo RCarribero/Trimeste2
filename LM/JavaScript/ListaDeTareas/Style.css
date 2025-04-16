@@ -1,0 +1,136 @@
+/* Fondo general */
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+#contenedor {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    padding: 40px 32px 32px 32px;
+    width: 100%;
+    max-width: 400px;
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título */
+#titulo {
+    text-align: center;
+    padding-top: 0;
+    margin-bottom: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.2rem;
+    color: #4f46e5;
+    letter-spacing: 1px;
+}
+
+/* Input de tarea */
+#tarea_input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #c7d2fe;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    outline: none;
+    transition: border 0.2s;
+    background: #f1f5f9;
+}
+#tarea_input:focus {
+    border-color: #6366f1;
+    background: #fff;
+}
+
+/* Botones */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 6px 0;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    font-weight: 500;
+}
+
+#btn_agregar, .bnt-agreagar {
+    background: #6366f1;
+    color: #fff;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+#btn_agregar:hover, .bnt-agreagar:hover {
+    background: #4f46e5;
+}
+
+#btn_vaciar, .bnt-vaciar {
+    background: #f87171;
+    color: #fff;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(248, 113, 113, 0.08);
+}
+#btn_vaciar:hover, .bnt-vaciar:hover {
+    background: #dc2626;
+}
+
+/* Lista de tareas */
+#listaTarea {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+#listaTarea li {
+    background: #f3f4f6;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    box-shadow: 0 1px 4px rgba(99, 102, 241, 0.04);
+    transition: background 0.2s;
+}
+
+#listaTarea li:hover {
+    background: #e0e7ff;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+    background: #f87171;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-left: 12px;
+    transition: background 0.2s;
+}
+.btn-eliminar:hover {
+    background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    #contenedor {
+        padding: 24px 8px 16px 8px;
+        max-width: 98vw;
+    }
+    #titulo {
+        font-size: 1.5rem;
+    }
+}
