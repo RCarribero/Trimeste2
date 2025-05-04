@@ -1,4 +1,4 @@
-package Tema6.TorneoVideojuego;
+package Tema7.TorneoVideojuego;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package src.ProyectoProgramacion;
+package ProyectoProgramacion;
 
 public class Barco { //Clase abstracta Barco
     private int tamano;

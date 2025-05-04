@@ -1,9 +1,9 @@
-/* Fondo general */
+/* Fondo degradado */
 body {
-    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
     min-height: 100vh;
     margin: 0;
-    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,126 +11,153 @@ body {
 
 /* Contenedor principal */
 #contenedor {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    padding: 40px 32px 32px 32px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 40px 30px 30px 30px;
     width: 100%;
     max-width: 400px;
-    margin: 32px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    animation: fadeIn 1s;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 
 /* Título */
 #titulo {
-    text-align: center;
-    padding-top: 0;
-    margin-bottom: 24px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2.2rem;
-    color: #4f46e5;
-    letter-spacing: 1px;
+    color: #2575fc;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px #b3c6ff55;
 }
 
 /* Input de tarea */
 #tarea_input {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1.5px solid #c7d2fe;
+    width: 70%;
+    padding: 12px;
+    border: none;
     border-radius: 8px;
+    margin-bottom: 15px;
     font-size: 1rem;
-    margin-bottom: 18px;
+    background: #f0f4ff;
+    box-shadow: 0 1px 4px #b3c6ff33;
     outline: none;
-    transition: border 0.2s;
-    background: #f1f5f9;
+    transition: box-shadow 0.2s;
 }
 #tarea_input:focus {
-    border-color: #6366f1;
-    background: #fff;
+    box-shadow: 0 2px 8px #2575fc44;
 }
 
 /* Botones */
 button {
-    padding: 10px 20px;
+    padding: 10px 18px;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
+    margin: 8px 4px;
     cursor: pointer;
-    margin: 6px 0;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: background 0.2s, transform 0.1s;
     font-weight: 500;
+    box-shadow: 0 2px 8px #b3c6ff22;
 }
 
-#btn_agregar, .bnt-agreagar {
-    background: #6366f1;
+#btn_agregar, .btn-guardar {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
     color: #fff;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
 }
-#btn_agregar:hover, .bnt-agreagar:hover {
-    background: #4f46e5;
+#btn_agregar:hover, .btn-guardar:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+    transform: scale(1.05);
 }
 
-#btn_vaciar, .bnt-vaciar {
-    background: #f87171;
+#btn_vaciar {
+    background: #ff4b2b;
     color: #fff;
-    margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(248, 113, 113, 0.08);
 }
-#btn_vaciar:hover, .bnt-vaciar:hover {
-    background: #dc2626;
+#btn_vaciar:hover {
+    background: #ff416c;
+    transform: scale(1.05);
+}
+
+.btn-eliminar {
+    background: #ff4b2b;
+    color: #fff;
+    margin-left: 8px;
+}
+.btn-eliminar:hover {
+    background: #ff416c;
+}
+
+.btn-Editar {
+    background: #f9d423;
+    color: #333;
+    margin-left: 8px;
+}
+.btn-Editar:hover {
+    background: #fffc00;
+}
+
+.btn-guardar {
+    background: #43e97b;
+    color: #fff;
+    margin-left: 8px;
+}
+.btn-guardar:hover {
+    background: #38f9d7;
 }
 
 /* Lista de tareas */
 #listaTarea {
     list-style: none;
     padding: 0;
-    width: 100%;
-    margin: 0 0 10px 0;
+    margin: 20px 0 0 0;
 }
 
 #listaTarea li {
-    background: #f3f4f6;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    padding: 12px 14px;
+    background: #f0f4ff;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 12px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 1rem;
-    box-shadow: 0 1px 4px rgba(99, 102, 241, 0.04);
-    transition: background 0.2s;
+    box-shadow: 0 1px 4px #b3c6ff33;
+    animation: fadeIn 0.5s;
+    transition: box-shadow 0.2s;
 }
 
 #listaTarea li:hover {
-    background: #e0e7ff;
+    box-shadow: 0 4px 16px #2575fc22;
 }
 
-/* Botón eliminar */
-.btn-eliminar {
-    background: #f87171;
-    color: #fff;
-    border: none;
+.input-edicion {
+    flex: 1;
+    padding: 8px;
     border-radius: 6px;
-    padding: 6px 14px;
-    font-size: 0.95rem;
-    cursor: pointer;
-    margin-left: 12px;
-    transition: background 0.2s;
+    border: 1px solid #b3c6ff;
+    margin-right: 8px;
+    font-size: 1rem;
+    background: #fff;
 }
-.btn-eliminar:hover {
-    background: #dc2626;
-}
+
+::-webkit-input-placeholder { color: #b3c6ff; }
+::-moz-placeholder { color: #b3c6ff; }
+:-ms-input-placeholder { color: #b3c6ff; }
+::placeholder { color: #b3c6ff; }
 
 /* Responsive */
 @media (max-width: 500px) {
     #contenedor {
-        padding: 24px 8px 16px 8px;
+        padding: 20px 8px;
         max-width: 98vw;
     }
-    #titulo {
-        font-size: 1.5rem;
+    #tarea_input {
+        width: 100%;
     }
 }
