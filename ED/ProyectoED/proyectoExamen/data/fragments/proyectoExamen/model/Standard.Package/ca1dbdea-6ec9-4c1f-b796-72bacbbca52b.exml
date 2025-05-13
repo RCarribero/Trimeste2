@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="proyectoexamen" version="4">
+  <OBJECT>
+    <ID name="proyectoexamen" mc="Standard.Package" uid="ca1dbdea-6ec9-4c1f-b796-72bacbbca52b"/>
+    <PID name="proyectoExamen" mc="Standard.Project" uid="37715bb3-c3a6-4452-99ea-b0a85495eafd"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[proyectoexamen]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Evento" mc="Standard.Class" uid="0d34a64e-c4e3-446d-8f98-ee19753258b4"/>
+        <COMPID name="concierto" mc="Standard.Class" uid="fed16876-1801-4f39-83ce-7df547483f0f"/>
+        <COMPID name="teatro" mc="Standard.Class" uid="c589f5af-efc0-4de0-b05a-352b35276232"/>
+        <COMPID name="organizador" mc="Standard.Class" uid="54ac46f8-0f27-4e35-88bd-3419e4c9d4b5"/>
+        <COMPID name="escenario" mc="Standard.Class" uid="b706e3b9-4351-4260-b02f-29d99560bd0d"/>
+        <COMPID name="iluminacion" mc="Standard.Class" uid="053f8555-f0b3-47fa-bd26-75d7ad634668"/>
+        <COMPID name="asistente" mc="Standard.Class" uid="ab2ab432-bf9f-40ea-bd4c-653e124eb265"/>
+        <COMPID name="entrada" mc="Standard.Class" uid="62033365-992b-4faa-8d6f-36a28c6bebba"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="proyectoexamen Class diagram" mc="Standard.ClassDiagram" uid="ac167d08-8974-47f8-8eed-b8dc24547de5"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

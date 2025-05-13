@@ -1,0 +1,259 @@
+/* Fondo degradado */
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+#contenedor {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 40px 30px 30px 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Título */
+#titulo {
+    font-size: 2.2rem;
+    color: #2575fc;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px #b3c6ff55;
+}
+
+/* Input de tarea */
+#tarea_input {
+    width: 70%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    background: #f0f4ff;
+    box-shadow: 0 1px 4px #b3c6ff33;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+#tarea_input:focus {
+    box-shadow: 0 2px 8px #2575fc44;
+}
+
+/* Estilo para el selector de importancia */
+#tarea_importancia {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #6a11cb;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #e0e7ff 0%, #f0f4ff 100%);
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 8px #b3c6ff33;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+#tarea_importancia:focus {
+    border: 2px solid #2575fc;
+    box-shadow: 0 2px 12px #2575fc44;
+    background: #eaf3ff;
+}
+
+/* Estilo para las opciones del selector */
+#tarea_importancia option {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+#tarea_importancia option[value="importante"] {
+    color: #e53935;
+    font-weight: bold;
+    background: #ffeaea;
+}
+
+#tarea_importancia option[value="normal"] {
+    color: #43a047;
+    background: #eaffea;
+}
+
+#tarea_importancia option[value="opcional"] {
+    color: #1565c0;
+    background: #eaf3ff;
+}
+
+/* Botones */
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin: 8px 4px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-weight: 500;
+    box-shadow: 0 2px 8px #b3c6ff22;
+}
+
+#btn_agregar, .btn-guardar {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+}
+#btn_agregar:hover, .btn-guardar:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+    transform: scale(1.05);
+}
+
+#btn_vaciar {
+    background: #ff4b2b;
+    color: #fff;
+}
+#btn_vaciar:hover {
+    background: #ff416c;
+    transform: scale(1.05);
+}
+
+.btn-eliminar {
+    background: #ff4b2b;
+    color: #fff;
+    margin-left: 8px;
+}
+.btn-eliminar:hover {
+    background: #ff416c;
+}
+
+.btn-Editar {
+    background: #f9d423;
+    color: #333;
+    margin-left: 8px;
+}
+.btn-Editar:hover {
+    background: #fffc00;
+}
+
+.btn-guardar {
+    background: #43e97b;
+    color: #fff;
+    margin-left: 8px;
+}
+.btn-guardar:hover {
+    background: #38f9d7;
+}
+
+/* Lista de tareas */
+#listaTarea {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+#listaTarea li {
+    background: #f0f4ff;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 4px #b3c6ff33;
+    animation: fadeIn 0.5s;
+    transition: box-shadow 0.2s;
+    position: relative; /* Necesario para el menú desplegable */
+}
+
+#listaTarea li:hover {
+    box-shadow: 0 4px 16px #2575fc22;
+}
+
+#listaTarea li span {
+    font-size: 1rem;
+}
+#listaTarea li span[style*="color: #e53935"] {
+    color: #e53935 !important;
+    font-weight: bold;
+}
+
+.input-edicion {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #b3c6ff;
+    margin-right: 8px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+::-webkit-input-placeholder { color: #b3c6ff; }
+::-moz-placeholder { color: #b3c6ff; }
+:-ms-input-placeholder { color: #b3c6ff; }
+::placeholder { color: #b3c6ff; }
+
+/* Estilos para el menú de estado */
+.estado-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: auto; /* Ajusta el ancho al contenido */
+    padding: 0; /* Elimina el padding */
+}
+
+.estado-menu li {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid transparent; /* Inicialmente sin borde */
+}
+
+.estado-menu li:hover {
+    background-color: #e8e0e3;
+    border: 1px solid #0400ea; /* Añade borde al hacer hover */
+}
+
+/* Mostrar el menú cuando se hace clic en el botón de estado */
+.btn-estado.active + .estado-menu {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    #contenedor {
+        padding: 20px 8px;
+        max-width: 98vw;
+    }
+    #tarea_input {
+        width: 100%;
+    }
+}
+/* Clases de prioridad */
+.importante {
+    color: red;
+    font-weight: bold;
+}
+
+.normal {
+    color: green;
+}
+
+.opcional {
+    color: blue;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Style.css">
+    <title>Lista de tareas</title>
+</head>
+<body>
+    <div id="contenedor"> 
+        <h1 id="titulo">Lista de Tareas</h1>
+        <input type="text" id="tarea_input" placeholder="¿Qué quieres hacer hoy?">
+        <select id="tarea_importancia">
+            <option value="normal" selected>Normal</option>
+            <option value="importante">Importante</option>
+            <option value="opcional">Opcional</option>
+        </select>
+        <input type="text" id="mensaje_importante" placeholder="Mensaje importante (opcional)" style="display:none; margin-top:5px;">
+        <button class="btn-agregar" id="btn_agregar">Agregar tarea</button>
+        <ul id="listaTarea"></ul>
+        <button class="btn-vaciar" id="btn_vaciar">Vaciar Lista</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
